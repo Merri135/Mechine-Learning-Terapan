@@ -1,0 +1,90 @@
+# Laporan Proyek Machine Learning - Merri Putri Panggabean
+
+## Domain Proyek
+
+### Latar Belakang
+
+Pendidikan merupakan salah satu aspek penting dalam pembangunan sumber daya manusia. Dalam proses pembelajaran, performa siswa sering kali menjadi indikator utama keberhasilan sistem pendidikan. namun, perfoma ini todat hanya dipengaruhi oleh kemampuan akademik semata, tetapi juga oleh berbagai faktor lain seperti latar belakang keluarga, kondisi sosial-ekonomi, serta ketersediaan fasilitas belajar.
+  
+## Business Understanding
+
+Dalam dunia pendidikan, memahami faktor-faktor yang memengaruhi performa siswa sangat krusial untuk meningkatkan kualitas pembelajaran dan mencegah ketimpangan hasil akademik. Melalui pendekatan analisis data dan machine learning, kita dapat mengklarifikasi permasalahan, merumuskan tujuan, serta menyusun solusi prediktif untuk membantu pengambilan keputusan di bidang pendidikan.
+
+### Problem Statements
+
+Berdasarkan latar belakang diatas, berikut batasan masalah yang akan diselesaikan dalam proyek ini :
+- Apakah terdapat perbedaan performa akademik berdasarkan jenis kelamin siswa?
+- Apakah mengikuti kursus persiapan ujian berdampak signifikan terhadap skor ujian siswa?
+- Bisakah kita memprediksi performa siswa (skor ujian) berdasarkan atribut demografisnya?
+
+### Goals
+
+Menjawab batasan masalah yang telah dirangkum dan akan menjawab pertanyaan-pertanyaan diatas, berikut tujuan masalahnya :
+- Kita perlu untuk menganalisis perbedaan nilai antar siswa berdasarkan jenis kelamin.
+- Kita perlu untuk mengetahui pengaruh kursus persiapan ujian terhadap performa ujian siswa.
+- Kita perlu untuk membangun model prediksi performa siswa berdasarkan atribut demografisnya, seperti gender,lunch,tingkat pendidikan orang tua dan status kursus.
+
+### Solution Statment
+
+untuk mencapai tujuan diatas, maka kita perlu melakukan pendekatan pemodelan yang dimana kita akan menggunakan algoritma seperti :
+- Random Forest (RF) : untuk menangani banyak fitur seperti kolom numerik dan kategorial.
+- K-Nearest Neighbors (KNN) : melakukan pertimbangan kesamaan antar siswa dalam prediksi skor.
+- Boosting : untuk meningkatkan akurasi prediksi dengan menggabungkan beberapa model lemah menjadi kuat.
+- Support Vector Machine (SVM) : untuk menangani masalah klasifikasi dengan melihat perbandingan skor tinggi dan rendah.
+
+**Menggunakan MSE (Mean Absolute Error) pada model yang akan di evaluasi.**
+
+## Data Understanding
+
+Dataset yang digunakan dalam proyek ini berisi informasi tentang performa akademik siswa berdasarkan beberapa faktor demografis dan sosial, seperti jenis kelamin, kelompok etnis, tingkat pendidikan orang tua, status mengikuti kursus persiapan ujian, dan jenis makan siang yang dikonsumsi. Selain itu, dataset ini juga mencatat skor ujian siswa dalam tiga mata pelajaran utama, yaitu **matematika (math score), membaca (reading score), dan menulis (writing score).**
+
+link dataset : https://www.kaggle.com/datasets/spscientist/students-performance-in-exams 
+
+### Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
+- gender : kolom kategori yang berisikan jenis kelamin tiap siswa.
+- lunch : kolom kategori yang berisikan jenis makan siang yang setia hari di konsumsi tiap siswa.
+- race/ethnicity : kolom kategori yang berisikan jenis kelompok etnis tiap siswa. yang sering dikategorikan dari group A sampai group E.
+- parental level of education : kolom kategori yang berisikan tingkat pendidikan orang (misalnya: high school, bachelor’s degree).
+- test preparation course : kolom kategori yang berisikan status mengikuti kursus persiapan ujian.
+- math score : kolom numerik yang berisikan skor ujian matematika.
+- reading score : kolom numerik yang berisikan skor ujian membaca.
+- writing score : kolom numerik yang berisikan skor ujian menulis.
+
+Dataset mentah yang digunakan dalam proyek ini memiliki 1000 baris data dan 8 kolom. Kolom - kolom tersebut terdiri dari 5 kolom kategori dan 3 kolom numerik. 
+
+**Rubrik/Kriteria Tambahan (Opsional)**:
+- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
+
+## Data Preparation
+Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+
+**Rubrik/Kriteria Tambahan (Opsional)**: 
+- Menjelaskan proses data preparation yang dilakukan
+- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+
+## Modeling
+Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
+
+**Rubrik/Kriteria Tambahan (Opsional)**: 
+- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
+- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
+- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+
+## Evaluation
+Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
+
+Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
+- Penjelasan mengenai metrik yang digunakan
+- Menjelaskan hasil proyek berdasarkan metrik evaluasi
+
+Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+
+**Rubrik/Kriteria Tambahan (Opsional)**: 
+- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+
+**---Ini adalah bagian akhir laporan---**
+
+_Catatan:_
+- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
+- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
+
