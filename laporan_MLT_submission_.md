@@ -40,7 +40,7 @@ Dataset yang digunakan dalam proyek ini berisi informasi tentang performa akadem
 
 link dataset : https://www.kaggle.com/datasets/spscientist/students-performance-in-exams 
 
-### Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
+### Variabel-variabel pada Performance Students dataset adalah sebagai berikut:
 - gender : kolom kategori yang berisikan jenis kelamin tiap siswa.
 - lunch : kolom kategori yang berisikan jenis makan siang yang setia hari di konsumsi tiap siswa.
 - race/ethnicity : kolom kategori yang berisikan jenis kelompok etnis tiap siswa. yang sering dikategorikan dari group A sampai group E.
@@ -50,7 +50,7 @@ link dataset : https://www.kaggle.com/datasets/spscientist/students-performance-
 - reading score : kolom numerik yang berisikan skor ujian membaca.
 - writing score : kolom numerik yang berisikan skor ujian menulis.
 
-Dataset mentah yang digunakan dalam proyek ini memiliki 1000 baris data dan 8 kolom. Kolom - kolom tersebut terdiri dari 5 kolom kategori dan 3 kolom numerik. 
+Dataset mentah yang digunakan dalam proyek ini memiliki 1000 baris data dan 8 kolom. Kolom - kolom tersebut terdiri dari 5 kolom kategori dan 3 kolom numerik. untuk memahami semua atribut-atribut yang dipakai, memakai fungsi library python yaitu .info() untuk menampilkan atribut-atribut dan baris serta kolom pada dataset. 
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
