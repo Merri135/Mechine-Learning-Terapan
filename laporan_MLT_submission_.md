@@ -79,29 +79,29 @@ dari output pada gambar diatas, maka dilihat bahwa :
 ## 2.1.c Menampilkan data statistik dataset.
 Pada proyek ini, menggunakan perintah .describe() untuk menampilkan dan mengetahui statistik dasar dari kolom **math score, reading score, writing score** seperti percentile, mean, standar deviasi, jumlah data, min dan max. maka berikut tampilan tabel 2 :
 
-![alt text](.asset/describe.png)
+![alt text](./asset/describe.png)
 
 gambar 3. keluaran statistik pada dataset insu_df menggunakan fungsi .describe(). 
 
 ## 2.1.d Menampilkan missing value dan duplikat data pada dataset.
 Pada proyek ini, untuk mengetahui data memiliki missing value dan duplikat data, maka menggunakan perintah fungsi .insnull() dan .duplicated() pada dataset insu_df, setelah melakukan perintah tersebut, maka akan menampilkan kolom yang memiliki missing value dan jumlah duplikat. maka beikut tampilannya :
 
-![alt text](.asset/missing.png).
+![alt text](./asset/missing.png).
 
 Gambar 4. tampilan missing value.
-![alt text](.asset/duplikat.png).
+![alt text](./asset/duplikat.png).
 
 Gambar 5. tampilan duplikat data.
 
 ## Exploratory Data Analysis
 ## 2.1.e Melihat outlier pada dataset.
 Pada kasus ini, kita akan melihat outlier dalam setiap kolom pada dataset, outlier sendiri adalah hasil pengamatan yang kemunculannya sangat jarang dan berbeda dari hasil pengamatan lainnya. maka berikut tampilan kolom yang outlier :
-![alt text](.asset/sebelum.png)
+![alt text](./asset/sebelum.png)
 Gambar 6. tampilan sebelum menangani outlier.
 dari gambar diatas, terdapat outlier pada kolom math score,reading score dan writing score. untuk menangani outlier kita dapat menggunakan teknik IQR method. IQR adalah *Interquartile Range*. berikut rumus akan kita pakai :
-![alt text](.asset/outlier.png)
+![alt text](./asset/outlier.png)
 setelah melakukan penanganan outlier pada kolom dataset, kita dapat melihat hasil dari penanganan outlier yang telah kita lakukan, maka tampilan hasil penganganan outlier, sebagai berikut :
-![alt text](.asset/setelah.png)
+![alt text](./asset/setelah.png)
 Gambar 7. setelah melakukan pengangan outlier.
 
 
