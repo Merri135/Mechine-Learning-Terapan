@@ -60,12 +60,16 @@ f. menampilkan visualisasi antar fitur numerik antar kategorial.
 
  ## 2.1.a Membuat dataframe dengan library pandas.
 Pada proyek ini, menggunakan fungsi **.read** untuk memasukkan dataset PerformanceStudents.csv kedalam bentuk dataframe menggunakan library pandas dan dataframe yang tersimpan ialah **insu_df**. setelah itu, untuk menampilkan 10 data pertama maka menggunakan **.head(10)**. maka berikut tampilannya :
+
 ![alt text](./asset/head.png)
+
 Gambar 1. tampilan 10 data pertama pada dataset insu_df.
 
 ## 2.1.b Menampilkan informasi dari dataset.
 Pada proyek ini,untuk memahami semua atribut-atribut yang dipakai, memakai fungsi library python yaitu .info() untuk menampilkan atribut-atribut dan baris serta kolom pada dataset. dimana perintah .info() berfungsi untuk menampilkan semua tipe data pada masing-masing atribut dalam dataset.
+
 ![alt text](./asset/info.png)
+
 gambar 2. tampilan informasi pada dataset insu_df.
 
 dari output pada gambar diatas, maka dilihat bahwa :
@@ -74,14 +78,19 @@ dari output pada gambar diatas, maka dilihat bahwa :
 3. memiliki jumlah 1000 baris dan 8 kolom pada dataset.
 ## 2.1.c Menampilkan data statistik dataset.
 Pada proyek ini, menggunakan perintah .describe() untuk menampilkan dan mengetahui statistik dasar dari kolom **math score, reading score, writing score** seperti percentile, mean, standar deviasi, jumlah data, min dan max. maka berikut tampilan tabel 2 :
-![alt text](.asset/describe.png).
+
+![alt text](.asset/describe.png)
+
 gambar 3. keluaran statistik pada dataset insu_df menggunakan fungsi .describe(). 
 
 ## 2.1.d Menampilkan missing value dan duplikat data pada dataset.
 Pada proyek ini, untuk mengetahui data memiliki missing value dan duplikat data, maka menggunakan perintah fungsi .insnull() dan .duplicated() pada dataset insu_df, setelah melakukan perintah tersebut, maka akan menampilkan kolom yang memiliki missing value dan jumlah duplikat. maka beikut tampilannya :
+
 ![alt text](.asset/missing.png).
+
 Gambar 4. tampilan missing value.
 ![alt text](.asset/duplikat.png).
+
 Gambar 5. tampilan duplikat data.
 
 ## Exploratory Data Analysis
