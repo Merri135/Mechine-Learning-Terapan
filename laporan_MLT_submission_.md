@@ -96,12 +96,12 @@ Gambar 5. tampilan duplikat data.
 ## Exploratory Data Analysis
 ## 2.1.e Melihat outlier pada dataset.
 Pada kasus ini, kita akan melihat outlier dalam setiap kolom pada dataset, outlier sendiri adalah hasil pengamatan yang kemunculannya sangat jarang dan berbeda dari hasil pengamatan lainnya. maka berikut tampilan kolom yang outlier :
-![alt text](./asset/sebelum.png)
+![alt text](./asset/sebelum.png)<br>
 Gambar 6. tampilan sebelum menangani outlier.
 dari gambar diatas, terdapat outlier pada kolom math score,reading score dan writing score. untuk menangani outlier kita dapat menggunakan teknik IQR method. IQR adalah *Interquartile Range*. berikut rumus akan kita pakai :
-![alt text](./asset/outlier.png)
+![alt text](./asset/outlier.png)<br>
 setelah melakukan penanganan outlier pada kolom dataset, kita dapat melihat hasil dari penanganan outlier yang telah kita lakukan, maka tampilan hasil penganganan outlier, sebagai berikut :
-![alt text](./asset/setelah.png)
+![alt text](./asset/setelah.png)<br>
 Gambar 7. setelah melakukan pengangan outlier.
 
 
