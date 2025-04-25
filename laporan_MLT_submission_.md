@@ -4,7 +4,7 @@
 
 ### Latar Belakang
 
-Pendidikan merupakan salah satu aspek penting dalam pembangunan sumber daya manusia. Dalam proses pembelajaran, performa siswa sering kali menjadi indikator utama keberhasilan sistem pendidikan. namun, perfoma ini todat hanya dipengaruhi oleh kemampuan akademik semata, tetapi juga oleh berbagai faktor lain seperti latar belakang keluarga, kondisi sosial-ekonomi, serta ketersediaan fasilitas belajar.
+Pendidikan merupakan salah satu aspek penting dalam pembangunan sumber daya manusia. Dalam proses pembelajaran, performa siswa sering kali menjadi indikator utama keberhasilan sistem pendidikan. namun, perfoma ini tidak hanya dipengaruhi oleh kemampuan akademik semata, tetapi juga oleh berbagai faktor lain seperti latar belakang keluarga, kondisi sosial-ekonomi, serta ketersediaan fasilitas belajar.
   
 ## Business Understanding
 
@@ -50,7 +50,9 @@ link dataset : https://www.kaggle.com/datasets/spscientist/students-performance-
 - reading score : kolom numerik yang berisikan skor ujian membaca.
 - writing score : kolom numerik yang berisikan skor ujian menulis.
 
-Dataset mentah yang digunakan dalam proyek ini memiliki 1000 baris data dan 8 kolom. Kolom - kolom tersebut terdiri dari 5 kolom kategori dan 3 kolom numerik. untuk memahami semua atribut-atribut yang dipakai, memakai fungsi library python yaitu .info() untuk menampilkan atribut-atribut dan baris serta kolom pada dataset. 
+Dataset mentah yang digunakan dalam proyek ini memiliki 1000 baris data dan 8 kolom. Kolom - kolom tersebut terdiri dari 5 kolom kategori dan 3 kolom numerik. untuk memahami semua atribut-atribut yang dipakai, memakai fungsi library python yaitu .info() untuk menampilkan atribut-atribut dan baris serta kolom pada dataset. dimana perintah .info() berfungsi untuk menampilkan semua tipe data pada masing-masing atribut dalam dataset.
+![alt text](./asset/info.png)<br>
+
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
