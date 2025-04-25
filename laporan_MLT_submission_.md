@@ -87,10 +87,9 @@ gambar 3. keluaran statistik pada dataset insu_df menggunakan fungsi .describe()
 Pada proyek ini, untuk mengetahui data memiliki missing value dan duplikat data, maka menggunakan perintah fungsi .insnull() dan .duplicated() pada dataset insu_df, setelah melakukan perintah tersebut, maka akan menampilkan kolom yang memiliki missing value dan jumlah duplikat. maka beikut tampilannya :
 
 ![alt text](./asset/missing.png).
-
 Gambar 4. tampilan missing value.
-![alt text](./asset/duplikat.png).
 
+![alt text](./asset/duplikat.png).
 Gambar 5. tampilan duplikat data.
 
 ## Exploratory Data Analysis
@@ -110,8 +109,8 @@ Gambar 7. setelah melakukan pengangan outlier.<br>
   Gambar 8. hasil visualisasi chart bar **math score**.<br>
   Pada gambar 8 merupakan hasil visualisasi kolom **math score** yang dapat kita lihat bahwa jumlah nilai skor matematika siswa tersebar cukup merata dengan kecenderungan siswa memiliki nilai antara 60-70, distribusi tidak sepenuhnya simetris, dikarenakan ada leih sedikit siswa mendapat nilai tertinggi dan sangat rendah.
 - Numeric writing score
-  ![alt text](./asset/Figure4.png)<br>
-  Gambar 9. Hasil Visualisasi chart bar **writing score**.<br>
+![alt text](./asset/Figure4.png)<br>
+Gambar 9. Hasil Visualisasi chart bar **writing score**.<br>
 Pada gambar 9 menampilkan visualisasi writing score yang dapat kita lihat bahwasebagian besar peserta mendapatkan skor menulis di sekitar nilai 60-80, distribusi nilai skor cenderung simetris sekitar nilai 70 dan mengindikasi bahwa skor-skor secara cukup merata disekitar rata-rata.<br>
 - Numeric reading score
 ![alt text](./asset/Figure5.png)<br>
