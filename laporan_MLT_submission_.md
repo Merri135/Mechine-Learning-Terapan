@@ -122,11 +122,27 @@ Gambar 10. Hasil visualisasi chart bar **reading score**<br>
   ![alt text](./asset/Figure_12.png)<br>
   Gambar 11. Hasil Visualisasi kolom **gender**.<br>
   Pada gambar 111 merupakan hasil dari visualisasi yang dilakukan, dapat kita lihat bahwa jenis kelamin female lebih tinggi dari jenis kelamin male.
-
 - Kategori lunch<br>
   ![alt text](./asset/Figure_11.png)<br>
   Gambar 12. Hasil visualisasi kolom **lunch**.<br>
   Pada gambar 12, dapat kita lihat bahwa jenis makan siang yang lebih tinggi ialah *standar* daripada *free/recuded* yang lebih rendah.
+- Kategori Parental level of education<br>
+![alt text](./asset/Figure_7.png)<br>
+Gambar 13. Hasil visualisasi kolom **parental level of education**.<br>
+Dari gambar 13 merupakan hasil dari visualisasi yang kita lakukan, maka dapat kita lihat bahwa tingkat pendidikan *some college* lebih tinggi dari data lainnya sedangkan yang terendah ialah tingkat pendidikan *master degree*.
+-  Kategori race/ethnicity<br>
+![alt text](./asset/Figure_8.png)<br>
+Gambar 14. Hasil visualisasi kolom **race/ethnicity**.<br>
+Pada gambar 14, dapat kita lihat bahwa kelompok etnis yang lebih tinggi ialah *group c* sedangkan *group B* cenderung signifikan, dan kelompok etnis yang paling rendah ialah *group A*.
+- Kategori test preparation course<br>
+![alt text](./asset/Figure_9.png)<r>
+Gambar 15. Hasil visualisasi kolom **test preparation course**<br>
+Pada gambar 15 merupakan hasil visualisasi yang kita lakukan, maka dapat kita lihat bahwa jenis ujian yang paling tinggi ialah *none* dibandingkan jenis ujian *completed* memiliki nilai yang paling rendah.
+
+- Visualisasi History kolom numerik<br>
+![alt text](./asset/history.png)<br>
+Gambar 16. History kolom numerik<br>
+Dari gambar diatas, kita dapat lihat bahwa ketiga mata pelajaran memiliki distribusi mendekati normal, dapat kita lihat dari mata pelajaran *matematika* sedikit lebih *rendah* diantara 60-70, mata pelajaran *reading* cenderung lebih sedikit lebih tinggi diantara 65-75 dan mata pelajaran *writing* hampir sama dengan mata pelajaran *matematika* hanya 5% naik dibanding *matematika*.
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 
