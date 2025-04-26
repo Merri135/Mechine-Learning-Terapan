@@ -139,10 +139,42 @@ Pada gambar 14, dapat kita lihat bahwa kelompok etnis yang lebih tinggi ialah *g
 Gambar 15. Hasil visualisasi kolom **test preparation course**<br>
 Pada gambar 15 merupakan hasil visualisasi yang kita lakukan, maka dapat kita lihat bahwa jenis ujian yang paling tinggi ialah *none* dibandingkan jenis ujian *completed* memiliki nilai yang paling rendah.
 
-- Visualisasi History kolom numerik<br>
+**Visualisasi History kolom numerik<br>**
 ![alt text](./asset/history.png)<br>
 Gambar 16. History kolom numerik<br>
-Dari gambar diatas, kita dapat lihat bahwa ketiga mata pelajaran memiliki distribusi mendekati normal, dapat kita lihat dari mata pelajaran *matematika* sedikit lebih *rendah* diantara 60-70, mata pelajaran *reading* cenderung lebih sedikit lebih tinggi diantara 65-75 dan mata pelajaran *writing* hampir sama dengan mata pelajaran *matematika* hanya 5% naik dibanding *matematika*.
+Dari gambar diatas, kita dapat lihat bahwa ketiga mata pelajaran memiliki distribusi mendekati normal, dapat kita lihat dari mata pelajaran *matematika* sedikit lebih *rendah* diantara 60-70, mata pelajaran *reading* cenderung lebih sedikit lebih tinggi diantara 65-75 dan mata pelajaran *writing* hampir sama dengan mata pelajaran *matematika* hanya 0.5% naik dibanding *matematika*.
+
+**Visualisasi korelasi math score terhadap data kategori<br>**
+![alt text](./asset/parental.png)<br>
+![alt text](./asset/race.png)<br>
+![alt text](./asset/test.png)<br>
+![alt text](./asset/lunch.png)<br>
+![alt text](./asset/gender.png)<br>
+Gambar 17. Visualisasi korelasi math score pada data kategori.<br>
+Pada gambar 17 merupakan hasil visualisasi korelasi *math score* pada data kategori. dimana yang kita lihat terdapat bar chart relatif sama rata, tetapi ada juga perbedaan yang signifikan yaitu :
+
+- Pada bar chart *parental level of education* yang kita lihat bahwa semakin tinggi tingkat pendidikan orang tua maka nilai matematika tiap siswa lebih tinggi dan semakin rendah tingkat pendidikan orangtua maka nilai matematika tiap siswa lebih rendah. maka hal ini juga mempengaruhi nilai tiap siswa.
+- dari bar chart *race/ethinicity* yang kita lihat bahwa group E memiliki rata-rata nilai matematika yang paling tinggi secara signifikan dari kelompok lainnya serta group D memiliki rata-rata lebih tinggi dari group A,B dan C dan group yang paling rendah ialah group A.
+- dari bar chart *test preparation course* yang kita lihat bahwa ada perbedaan yang relatif tidak merata, dimana completed memiliki rata-rata nilai matematika yang kebih tinggi dibanding dengan none yang memiliki nilai rata-rata matematika yang tergolong rendah.
+- dari bar chart *lunch* yang kita ketahui bahwa jenis makan siang yang lebih tinggi ialah standard dibanding dengan free/educed memiliki nilai rendah.
+- dari bar chart *gender* yang kita ketahui bahwa jenis kelamin yang mendominasi nilai matematika ialah male memiliki skor nilai 65-70 dibanding dengan female memiliki nilai skor 60-65 lebih rendah dari male.
+
+**Visualisasi hubungan antar fitur numerik dengan fungsi pairplot.<br>**
+![alt text](./asset/pairplot.png)<br>
+Gambar 18. Hubungan antar fitur numerik dengan pairplot.<br>
+Pada Gambar 18 merupakan visualisasi hubungan antar fitur numerik dengan fungsi pairplot. Pada Gambar 18 terdapat fungsi pairplot dari library seaborn yang menunjukkan relasi pasangan dalam dataset. Dari grafik, kita dapat melihat plot relasi masing-masing fitur numerik pada dataset.
+
+Pada kasus ini, kita akan melihat relasi antara semua fitur numerik yang ada dengan fitur target kita  yaitu *'math score'*. Untuk membacanya, perhatikan fitur pada sumbu y, temukan fitur target *'math score'*, dan lihatlah grafik relasi antara fitur tersebut pada sumbu y dengan semua fitur pada sumbu x.
+
+Pada pola sebaran data grafik pairplot sebelumnya, terlihat adanya korelasi positif yang kuat antara setiap pasangan fitur:
+
+'math score' memiliki korelasi positif yang kuat dengan 'reading score'. Hal ini terlihat dari sebaran titik-titik pada scatter plot yang membentuk pola garis lurus menaik dari kiri bawah ke kanan atas.<br>
+'math score' juga memiliki korelasi positif yang kuat dengan 'writing score', ditunjukkan oleh pola sebaran yang serupa.<br>
+Demikian pula, 'reading score' menunjukkan korelasi positif yang kuat dengan 'writing score'.<br>
+Sebaliknya, tidak terlihat adanya indikasi korelasi yang lemah antar fitur-fitur ini karena sebarannya secara jelas membentuk pola hubungan yang positif.
+
+**Korelasi matriks fitur numeri.<br>**
+
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 
