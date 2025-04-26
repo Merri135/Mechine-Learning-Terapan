@@ -104,11 +104,11 @@ setelah melakukan penanganan outlier pada kolom dataset, kita dapat melihat hasi
 Gambar 7. setelah melakukan pengangan outlier.<br>
 ## 2.1.F Menampilkan distribusi numerik dan kategori
 **Visualisasi Numeric Fitur**
-- Numeric math score
+- Numeric math score<br>
   ![alt text](./asset/Figure3.png)<br>
   Gambar 8. hasil visualisasi chart bar **math score**.<br>
   Pada gambar 8 merupakan hasil visualisasi kolom **math score** yang dapat kita lihat bahwa jumlah nilai skor matematika siswa tersebar cukup merata dengan kecenderungan siswa memiliki nilai antara 60-70, distribusi tidak sepenuhnya simetris, dikarenakan ada leih sedikit siswa mendapat nilai tertinggi dan sangat rendah.
-- Numeric writing score
+- Numeric writing score<br>
 ![alt text](./asset/Figure4.png)<br>
 Gambar 9. Hasil Visualisasi chart bar **writing score**.<br>
 Pada gambar 9 menampilkan visualisasi writing score yang dapat kita lihat bahwasebagian besar peserta mendapatkan skor menulis di sekitar nilai 60-80, distribusi nilai skor cenderung simetris sekitar nilai 70 dan mengindikasi bahwa skor-skor secara cukup merata disekitar rata-rata.
@@ -118,12 +118,12 @@ Gambar 10. Hasil visualisasi chart bar **reading score**<br>
   Pada gambar 10 menampilkan hasil visualisasi rading score yang dapat kita lihat bahwa sebagian siswa mendapatkan nilai skor antara 60-80 serta nilai yang sangat rendah antar 40 dan tertinggi antara 90 tetapi jarang diperoleh.
 
 **Visualisasi Kategori Fitur**
-- Kategori gender
+- Kategori gender<br>
   ![alt text](./asset/Figure_12.png)<br>
   Gambar 11. Hasil Visualisasi kolom **gender**.<br>
   Pada gambar 111 merupakan hasil dari visualisasi yang dilakukan, dapat kita lihat bahwa jenis kelamin female lebih tinggi dari jenis kelamin male.
 
-- Kategori lunch
+- Kategori lunch<br>
   ![alt text](./asset/Figure_11.png)<br>
   Gambar 12. Hasil visualisasi kolom **lunch**.<br>
   Pada gambar 12, dapat kita lihat bahwa jenis makan siang yang lebih tinggi ialah *standar* daripada *free/recuded* yang lebih rendah.
