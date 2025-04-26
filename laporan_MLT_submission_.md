@@ -112,13 +112,12 @@ Gambar 7. setelah melakukan pengangan outlier.<br>
 ![alt text](./asset/Figure4.png)<br>
 Gambar 9. Hasil Visualisasi chart bar **writing score**.<br>
 Pada gambar 9 menampilkan visualisasi writing score yang dapat kita lihat bahwasebagian besar peserta mendapatkan skor menulis di sekitar nilai 60-80, distribusi nilai skor cenderung simetris sekitar nilai 70 dan mengindikasi bahwa skor-skor secara cukup merata disekitar rata-rata.
-- Numeric reading score
-  ![alt text](./asset/Figure5.png)<br>
-  Gambar 10. Hasil visualisasi chart bar **reading score**<br>
+- Numeric reading score<br>
+![alt text](./asset/Figure5.png)<br>
+Gambar 10. Hasil visualisasi chart bar **reading score**<br>
   Pada gambar 10 menampilkan hasil visualisasi rading score yang dapat kita lihat bahwa sebagian siswa mendapatkan nilai skor antara 60-80 serta nilai yang sangat rendah antar 40 dan tertinggi antara 90 tetapi jarang diperoleh.
 
 **Visualisasi Kategori Fitur**
-
 - Kategori gender
   ![alt text](./asset/Figure_12.png)<br>
   Gambar 11. Hasil Visualisasi kolom **gender**.<br>
