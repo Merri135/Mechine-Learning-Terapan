@@ -174,9 +174,25 @@ Demikian pula, 'reading score' menunjukkan korelasi positif yang kuat dengan 'wr
 Sebaliknya, tidak terlihat adanya indikasi korelasi yang lemah antar fitur-fitur ini karena sebarannya secara jelas membentuk pola hubungan yang positif.
 
 **Korelasi matriks fitur numeri.<br>**
+![alt text](./asset/matrik.png)<br>
+Gambar 19. Korelasi matrik fitur numerik.<br>
+Pada gambar diatas merupakan hasil korelasi matrik pada fitur numerik, yang dimana diketahui bahwa setiap dalam sel adalah nilai koefisien korelasi pearson antara dua fitur. dimana nilai antara 1 dan -1 menunjukkan korelasi yang kuat sedangkan nilai yang mendekati 0 menunjukkan korelasi yang lemah.<br>
+dari hasil visualisasi yang kita ketahui bahwa fitur 'reading score' dan 'writing score' keduanya memiliki hubungan yang positif dengan 'math score'. jadi, fitur 'math score' berkorelasi tinggi dengan kedua fitur tersebut.
+## 3. Data Preparation
+**3.1 Tahap Preparation :<br>**
+- melakukan fungsi 'Standarisasi' pada data numerik
+- mengubah data kategori pada dataset menjadi 'true' dan 'false' dengan menggunakan One-Hot-Encoding.
+- menggunakan teknik PCA.
+- melakukan data splitting menjadi data latih dan data test.<br>
+- **Standarisasi pada data numerik.<br>**
+|      | math score | reading score | writing score     | gender_female | gender_male | lunch/free_reduced | lunch/free_standard | parental level of education_associate's degree | parental level of education_bachelor's degree | parental level of education_high school | parental level of education_master's degree |parental level of education_some college | parental level of education_some high school| test preparation course_completed | test preparation course_none | race/ethnicity_groupA | race/ethnicity_groupB | race/ethnicity_groupC | race/ethnicity_groupD | race/ethnicity_groupE |
+|------|-----|----------|-------------|------------|----------|-----------|------------|------------------|------------------|------------------|------------------|
+| 0    | 0.373174  | 0.168406        | 0.374241	 | True	|False |	False |	True |	False	True |	False |	False |	False |	False |	False |	True |	False  |	True |	False |	False |	False |
+| 1    | 0.164871  | 1.453233 |	1.338567	 | True |	False |	False |	True |	False	| False	|False	| False	| True	| False	| True |	False |	False |	False |	True |	False |	False |
+| 2    |1.622992 |	1.810130 |	1.682969	 | True |	False |	False |	True |	False |	False |	False |	True |	False |	False |	False |	True |	False |	True |	False |	False |	False |
+| 3    | -1.362684 |	-0.902283 |	-1.692172	 |False | True	| True	| False	| True	| False	| False	| False	| False	| False	| False	| True	| True	| False	| False	| False	| False |
+  4    |	0.650912|	0.596682 |	0.443121 |	False |	True |	False |	True |	False |	False |	False |	False |	True |	False |	False |	True |	False |	False |	True |	False |	False |
 
-## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 
 **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan proses data preparation yang dilakukan
