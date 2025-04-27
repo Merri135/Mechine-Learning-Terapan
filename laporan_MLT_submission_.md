@@ -180,11 +180,39 @@ Pada gambar diatas merupakan hasil korelasi matrik pada fitur numerik, yang dima
 dari hasil visualisasi yang kita ketahui bahwa fitur 'reading score' dan 'writing score' keduanya memiliki hubungan yang positif dengan 'math score'. jadi, fitur 'math score' berkorelasi tinggi dengan kedua fitur tersebut.
 ## 3. Data Preparation
 **3.1 Tahap Preparation :<br>**
-- melakukan fungsi 'Standarisasi' pada data numerik
-- mengubah data kategori pada dataset menjadi 'true' dan 'false' dengan menggunakan One-Hot-Encoding.
-- menggunakan teknik PCA.
-- melakukan data splitting menjadi data latih dan data test.<br>
-- **Standarisasi pada data numerik.<br>**
+A. melakukan fungsi 'Standarisasi' pada data numerik,br>
+B. mengubah data kategori pada dataset menjadi 'true' dan 'false' dengan menggunakan One-Hot-Encoding.<br>
+C. menggunakan teknik PCA.<br>
+D. melakukan data splitting menjadi data latih dan data test.<br>
+
+**A. Standarisasi pada data numerik.<br>**
+
+| index | gender | race/ethnicity | parental level of education | lunch        | test preparation course | math score | reading score | writing score |
+|:-----:|:------:|:--------------:|:---------------------------:|:------------:|:-----------------------:|:----------:|:-------------:|:-------------:|
+| 0     | female | group B         | bachelor's degree           | standard     | none                    | 0.373174   | 0.168406       | 0.374241       |
+| 1     | female | group C         | some college                | standard     | completed               | 0.164871   | 1.453233       | 1.338567       |
+| 2     | female | group B         | master's degree             | standard     | none                    | 1.622992   | 1.810130       | 1.682969       |
+| 3     | male   | group A         | associate's degree          | free/reduced | none                    | -1.362684  | -0.902283      | -1.692172      |
+| 4     | male   | group C         | some college                | standard     | none                    | 0.650912   | 0.596682       | 0.443121       |
+| ...   | ...    | ...             | ...                         | ...          | ...                     | ...        | ...            | ...            |
+| 995   | female | group E         | master's degree             | standard     | completed               | 1.484123   | 2.095647       | 1.820730       |
+| 996   | male   | group C         | high school                 | free/reduced | none                    | -0.321169  | -1.045042      | -0.934487      |
+| 997   | female | group C         | high school                 | free/reduced | completed               | -0.529472  | 0.097027       | -0.245683      |
+| 998   | female | group D         | some college                | standard     | completed               | 0.095437   | 0.596682       | 0.580882       |
+| 999   | female | group D         | some college                | free/reduced | none                    | 0.720346   | 1.167716       | 1.200806       | <br>
+Gambar 20. Tabel standarisasi.<br>
+Pada gambar diatas merupakan hasil dari standarisasi yang telah dilakukan pada data numerik untuk mengubah nilai-nilai angka supaya punya rata-rata (mean) menjadi 0 dan standar deviasi menjadi 1. berikut rumus standarisasi.
+$$
+z = \frac{x - \text{mean}}{\text{standard deviation}}
+$$
+
+Keterangan:
+- \( z \) = nilai hasil standarisasi
+- \( x \) = nilai asli
+- \( \text{mean} \) = rata-rata data
+- \( \text{standard deviation} \) = standar deviasi data
+
+**B. One-Hot -Encoding pada data numerik<br>**
 
 | index | math score | reading score | writing score | gender_female | gender_male | lunch_free_reduced | lunch_free_standard | parental level of education_associate's degree | parental level of education_bachelor's degree | parental level of education_high school | parental level of education_master's degree | parental level of education_some college | parental level of education_some high school | test preparation course_completed | test preparation course_none | race/ethnicity_groupA | race/ethnicity_groupB | race/ethnicity_groupC | race/ethnicity_groupD | race/ethnicity_groupE |
 |:-----:|:----------:|:-------------:|:-------------:|:-------------:|:-----------:|:------------------:|:-------------------:|:----------------------------------------------:|:--------------------------------------------:|:--------------------------------------:|:-------------------------------------------:|:--------------------------------:|:----------------------------------:|:-----------------------------:|:-----------------------:|:-------------------:|:-------------------:|:-------------------:|:-------------------:|:-------------------:|
