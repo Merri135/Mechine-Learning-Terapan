@@ -199,18 +199,13 @@ D. melakukan data splitting menjadi data latih dan data test.<br>
 | 996   | male   | group C         | high school                 | free/reduced | none                    | -0.321169  | -1.045042      | -0.934487      |
 | 997   | female | group C         | high school                 | free/reduced | completed               | -0.529472  | 0.097027       | -0.245683      |
 | 998   | female | group D         | some college                | standard     | completed               | 0.095437   | 0.596682       | 0.580882       |
-| 999   | female | group D         | some college                | free/reduced | none                    | 0.720346   | 1.167716       | 1.200806       | <br>
-Gambar 20. Tabel standarisasi.<br>
-Pada gambar diatas merupakan hasil dari standarisasi yang telah dilakukan pada data numerik untuk mengubah nilai-nilai angka supaya punya rata-rata (mean) menjadi 0 dan standar deviasi menjadi 1. berikut rumus standarisasi.
-$$
-z = \frac{x - \text{mean}}{\text{standard deviation}}
-$$
+| 999   | female | group D         | some college                | free/reduced | none                    | 0.720346   | 1.167716       | 1.200806       | 
+<br>
 
-Keterangan:
-- \( z \) = nilai hasil standarisasi
-- \( x \) = nilai asli
-- \( \text{mean} \) = rata-rata data
-- \( \text{standard deviation} \) = standar deviasi data
+Tabel 1. Tabel standarisasi.<br>
+Pada gambar diatas merupakan hasil dari standarisasi yang telah dilakukan pada data numerik untuk mengubah nilai-nilai angka supaya punya rata-rata (mean) menjadi 0 dan standar deviasi menjadi 1. berikut rumus standarisasi.
+![alt text](./asset/rumus_standar.png)<br>
+
 
 **B. One-Hot -Encoding pada data numerik<br>**
 
