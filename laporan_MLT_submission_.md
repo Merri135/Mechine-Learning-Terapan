@@ -205,7 +205,7 @@ D. melakukan data splitting menjadi data latih dan data test.<br>
 Tabel 1. Tabel standarisasi.<br>
 Pada gambar diatas merupakan hasil dari standarisasi yang telah dilakukan pada data numerik untuk mengubah nilai-nilai angka supaya punya rata-rata (mean) menjadi 0 dan standar deviasi menjadi 1. berikut rumus standarisasi.
 ![alt text](./asset/rumus_standar.png)<br>
-
+Gambar 20. Rumus standarisasi pada data numerik.
 
 **B. One-Hot -Encoding pada data numerik<br>**
 
@@ -216,9 +216,12 @@ Pada gambar diatas merupakan hasil dari standarisasi yang telah dilakukan pada d
 | 2     | 1.622992   | 1.810130       | 1.682969       | True          | False       | False              | True                | False                                         | False                                      | False                               | True                                     | False                         | False                           | False                       | True                  | False               | True                | False               | False               | False               |
 | 3     | -1.362684  | -0.902283      | -1.692172      | False         | True        | True               | False               | True                                          | False                                      | False                               | False                                    | False                         | False                           | False                       | True                  | True                | False               | False               | False               | False               |
 | 4     | 0.650912   | 0.596682       | 0.443121       | False         | True        | False              | True                | False                                         | False                                      | False                               | False                                    | True                          | False                           | False                       | True                  | False               | False               | True                | False               | False               |
+<br>
+Tabel 2. One-Hot-Encoding pada data kategori.<br>
+Pada tabel diatas merupakan hasil one hot encoding yang kita lakukan pada data kategori yang menghasilkan *False* dan *True* pada semua data bertipe kategori. menggunakan one-hot-encoding dengan teknik **.get_dummies()**
 
-
-
+**C. Teknik PCA<br>**
+PCA (Principal Component Analysis) adalah teknik penurunan dimensi yang bertujuan untuk mengubah sekumpulan data asli dengan banyak variabel yang mungkin berkorelasi menjadi sekumpulan variabel baru. dengan hal itulah, teknik PCA pada kolom **'math score', writing score' dan 'reading score'**. mempertahankan komponen PCA seperti gambar dibawah :<br>
 
 **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan proses data preparation yang dilakukan
