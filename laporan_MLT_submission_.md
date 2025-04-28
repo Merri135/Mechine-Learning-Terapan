@@ -203,7 +203,7 @@ D. melakukan data splitting menjadi data latih dan data test.<br>
 <br>
 
 Tabel 1. Tabel standarisasi.<br>
-Pada gambar diatas merupakan hasil dari standarisasi yang telah dilakukan pada data numerik untuk mengubah nilai-nilai angka supaya punya rata-rata (mean) menjadi 0 dan standar deviasi menjadi 1. berikut rumus standarisasi.
+Pada tabel diatas merupakan hasil dari standarisasi yang telah dilakukan pada data numerik untuk mengubah nilai-nilai angka supaya punya rata-rata (mean) menjadi 0 dan standar deviasi menjadi 1. berikut rumus standarisasi.
 ![alt text](./asset/rumus_standar.png)<br>
 Gambar 20. Rumus standarisasi pada data numerik.
 
@@ -222,11 +222,12 @@ Pada tabel diatas merupakan hasil one hot encoding yang kita lakukan pada data k
 
 **C. Teknik PCA<br>**
 PCA (Principal Component Analysis) adalah teknik penurunan dimensi yang bertujuan untuk mengubah sekumpulan data asli dengan banyak variabel yang mungkin berkorelasi menjadi sekumpulan variabel baru. dengan hal itulah, teknik PCA pada kolom **'math score', writing score' dan 'reading score'**. mempertahankan komponen PCA seperti gambar dibawah :<br>
+![alt text](./asset/pca.png)<br>
+Gambar 21. informasi komponen PCA.<br>
+Pada gambar diatas merupakan hasil dari komponen PCA yang kita lakukan dengan menggunakan fungsi *.explain _variance_ratio_* pada kolom yang kita komponenkan menjadi tiga. yang diartikan bahwa 89% informasi pada fitur **math score**, 86% informasi pada fitur yang **readning score**.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
-
+**D. Data Splitting<br>**
+Pada proyek ini kita akan menggunakan data split untuk membagi fitur target yang akan kita latih selanjutnya. untuk melakukan itu, perlu mengimport library data split yaitu *train_test_split*, kemudian membagi variabel menjadi 2 buah yaitu X yang berfungsi untuk menghapus kolom *ma
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
 
