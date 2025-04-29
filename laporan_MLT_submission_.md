@@ -289,7 +289,8 @@ y_pred = nilai yang diprediksi.<br>
 <br>
 Tabel 3. Hasil MSE.<br>
 Pada tabel diatas merupakan hasil MSE yang telah kita lakukan pada data train dan data test. untuk lebih memudahkan penulis menampilkan plot matrik dengan bar chart :<br>
-![alt text](./asset/model.png)<br>
+![alt text(./asset/model.png)<br>
+
 Gambar 22. Visualisasi hasil MSE dari ke 4 algoritma<br>
 Dari gambar diatas, terlihat bahwa model Random forest pada data train memiliki nilai error yang sangat kecil tetapi pada data test memiliki nilai yang tinggi yang mengalami data test overfitting. dibanding dengan model KNN dan SVM memiliki nilai error pada data train dan data test yang tinggi dan untuk model boosting relatif seimbang pada data train dan data test. sehingga model Random Forest yang akan kita pilih sebagai model terbaik untuk melakukan prediksi hasil nilai skor ujian membaca pada siswa.
 
