@@ -288,7 +288,8 @@ y_pred = nilai yang diprediksi.<br>
 | **SVM**   | 25.240321  | 29.443402  |
 <br>
 Tabel 3. Hasil MSE.<br>
-Pada tabel diatas merupakan hasil MSE yang telah kita lakukan pada data train dan data test. untuk lebih memudahkan penulis menampilkan plot matrik dengan bar chart :<br>
+Pada tabel diatas merupakan hasil MSE yang telah kita lakukan pada data train dan data test. untuk lebih memudahkan penulis menampilkan plot matrik dengan bar chart.
+
 ![alt text](./asset/model.png)<br>
 
 Gambar 22. Visualisasi hasil MSE dari ke 4 algoritma<br>
