@@ -1,36 +1,35 @@
 # Laporan Proyek Machine Learning - Merri Putri Panggabean
 
-## 1. Domain Proyek
+## Domain Proyek
 
-### 1.1 Latar Belakang
+### 1 Latar Belakang
 
-Pendidikan merupakan salah satu aspek penting dalam pembangunan sumber daya manusia. Dalam proses pembelajaran, performa siswa sering kali menjadi indikator utama keberhasilan sistem pendidikan. namun, perfoma ini tidak hanya dipengaruhi oleh kemampuan akademik semata, tetapi juga oleh berbagai faktor lain seperti latar belakang keluarga, kondisi sosial-ekonomi, serta ketersediaan fasilitas belajar.
+Pendidikan merupakan salah satu pilar utama dalam pembangunan suatu bangsa. Kualitas pendidikan tidak hanya ditentukan oleh kurikulum dan fasilitas, tetapi juga oleh berbagai faktor individu dan sosial yang memengaruhi hasil belajar siswa. Salah satu cara untuk mengevaluasi hasil belajar siswa adalah melalui performa mereka dalam ujian akademik.
   
-## 1.2 Business Understanding
+## 1.1 Business Understanding
 
 Dalam dunia pendidikan, memahami faktor-faktor yang memengaruhi performa siswa sangat krusial untuk meningkatkan kualitas pembelajaran dan mencegah ketimpangan hasil akademik. Melalui pendekatan analisis data dan machine learning, kita dapat mengklarifikasi permasalahan, merumuskan tujuan, serta menyusun solusi prediktif untuk membantu pengambilan keputusan di bidang pendidikan.
 
-### 1.3 Problem Statements
-
+### 1.2 Problem Statements
 Berdasarkan latar belakang diatas, berikut batasan masalah yang akan diselesaikan dalam proyek ini :
-- Apakah terdapat perbedaan performa akademik berdasarkan jenis kelamin siswa?
-- Apakah mengikuti kursus persiapan ujian berdampak signifikan terhadap skor ujian siswa?
-- Bisakah kita memprediksi performa siswa (skor ujian) berdasarkan atribut demografisnya?
+- Apa saja faktor yang berpengaruh terhadap nilai ujian siswa?
+- Apakah terdapat perbedaan signifikan dalam kinerja siswa berdasarkan jenis kelamin dan latar belakang pendidikan orang tua?
+- Bagaimana kita bisa memprediksi performa siswa pada skor ujian menggunakan KNN,SVM,RF dan BOOSTING?
 
-### 1.4 Goals
+### 1.3 Goals
 
 Menjawab batasan masalah yang telah dirangkum dan akan menjawab pertanyaan-pertanyaan diatas, berikut tujuan masalahnya :
-- Kita perlu untuk menganalisis perbedaan nilai antar siswa berdasarkan jenis kelamin.
-- Kita perlu untuk mengetahui pengaruh kursus persiapan ujian terhadap performa ujian siswa.
-- Kita perlu untuk membangun model prediksi performa siswa berdasarkan atribut demografisnya, seperti gender,lunch,tingkat pendidikan orang tua dan status kursus.
+- Kita perlu untuk menganalisis faktor yang berpengaruh pada nilai skor siswa.
+- Kita perlu untuk melakukan visualisasi untuk melihat perbedaan kinerja siswa menurut gender dan parental level of education.
+- Kita perlu untuk membangun model prediksi performa siswa menggunakan ke empat algoritma yaitu KNN,RF,SVM dan BOOSTING.
 
-### 1.5 Solution Statment
+### 1.4 Solution Statment
 
 untuk mencapai tujuan diatas, maka kita perlu melakukan pendekatan pemodelan yang dimana kita akan menggunakan algoritma seperti :
-- Random Forest (RF) : untuk menangani banyak fitur seperti kolom numerik dan kategorial.
-- K-Nearest Neighbors (KNN) : melakukan pertimbangan kesamaan antar siswa dalam prediksi skor.
-- Boosting : untuk meningkatkan akurasi prediksi dengan menggabungkan beberapa model lemah menjadi kuat.
-- Support Vector Machine (SVM) : untuk menangani masalah klasifikasi dengan melihat perbandingan skor tinggi dan rendah.
+- Analisis  Deskriptif : kita akan menggunakan statistik deskriptif untuk memahami distribusi data. ini mencakup semua nilai skor akademik.
+- Analisis korelasi : menggunakan korelasi untuk melihat hubungan antara berbagai faktor, seperti gender,parental level of education terhadap nilai skor siswa.
+- Model Prediksi : membangun model predeksi berbasis mechine learning seperti
+- Random Forest (RF), K-Nearest Neighbors (KNN), Boosting, Support Vector Machine (SVM) untuk menangani nilai skor siswa.
 
 **Menggunakan MSE (Mean Absolute Error) pada model yang akan di evaluasi.**
 
