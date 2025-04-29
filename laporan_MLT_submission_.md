@@ -144,6 +144,7 @@ Gambar 16. History kolom numerik<br>
 Dari gambar diatas, kita dapat lihat bahwa ketiga mata pelajaran memiliki distribusi mendekati normal, dapat kita lihat dari mata pelajaran *matematika* sedikit lebih *rendah* diantara 60-70, mata pelajaran *reading* cenderung lebih sedikit lebih tinggi diantara 65-75 dan mata pelajaran *writing* hampir sama dengan mata pelajaran *matematika* hanya 0.5% naik dibanding *matematika*.
 
 **Visualisasi korelasi math score terhadap data kategori<br>**
+
 ![alt text](./asset/parental.png)<br>
 ![alt text](./asset/race.png)<br>
 ![alt text](./asset/test.png)<br>
