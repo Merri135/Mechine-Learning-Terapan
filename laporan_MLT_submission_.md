@@ -149,8 +149,8 @@ Dari gambar diatas, kita dapat lihat bahwa ketiga mata pelajaran memiliki distri
 ![alt text](./asset/test.png)<br>
 ![alt text](./asset/lunch.png)<br>
 ![alt text](./asset/gender.png)<br>
-Gambar 17. Visualisasi korelasi math score pada data kategori.<br>
-Pada gambar 17 merupakan hasil visualisasi korelasi *math score* pada data kategori. dimana yang kita lihat terdapat bar chart relatif sama rata, tetapi ada juga perbedaan yang signifikan yaitu :
+Gambar 17. Visualisasi korelasi reading score pada data kategori.<br>
+Pada gambar 17 merupakan hasil visualisasi korelasi *reading score* pada data kategori. dimana yang kita lihat terdapat bar chart relatif sama rata, tetapi ada juga perbedaan yang signifikan yaitu :
 
 - Pada bar chart *parental level of education* yang kita lihat bahwa semakin tinggi tingkat pendidikan orang tua maka nilai matematika tiap siswa lebih tinggi dan semakin rendah tingkat pendidikan orangtua maka nilai matematika tiap siswa lebih rendah. maka hal ini juga mempengaruhi nilai tiap siswa.
 - dari bar chart *race/ethinicity* yang kita lihat bahwa group E memiliki rata-rata nilai matematika yang paling tinggi secara signifikan dari kelompok lainnya serta group D memiliki rata-rata lebih tinggi dari group A,B dan C dan group yang paling rendah ialah group A.
