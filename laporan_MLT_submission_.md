@@ -37,7 +37,7 @@ untuk mencapai tujuan diatas, maka kita perlu melakukan pendekatan pemodelan yan
 
 Dataset yang digunakan dalam proyek ini berisi informasi tentang performa akademik siswa berdasarkan beberapa faktor demografis dan sosial, seperti jenis kelamin, kelompok etnis, tingkat pendidikan orang tua, status mengikuti kursus persiapan ujian, dan jenis makan siang yang dikonsumsi. Selain itu, dataset ini juga mencatat skor ujian siswa dalam tiga mata pelajaran utama, yaitu **matematika (math score), membaca (reading score), dan menulis (writing score).**
 
-link dataset : https://www.kaggle.com/datasets/spscientist/students-performance-in-exams 
+berikut link dataset yang dianalisa : https://www.kaggle.com/datasets/spscientist/students-performance-in-exams 
 
 Dataset mentah yang digunakan dalam proyek ini memiliki 1000 baris data dan 8 kolom. Kolom - kolom tersebut terdiri dari 5 kolom kategori dan 3 kolom numerik. untuk penjelasan mengenai variabel-variabel pada Performance Students dataset adalah sebagai berikut:
 - gender : jenis kelamin tiap siswa.
@@ -180,34 +180,11 @@ Pada gambar diatas merupakan hasil korelasi matrik pada fitur numerik, yang dima
 dari hasil visualisasi yang kita ketahui bahwa fitur 'reading score' dan 'writing score' keduanya memiliki hubungan yang positif dengan 'math score'. jadi, fitur 'math score' berkorelasi tinggi dengan kedua fitur tersebut.
 ## 3. Data Preparation
 **3.1 Tahap Preparation :<br>**
-A. melakukan fungsi 'Standarisasi' pada data numerik,br>
-B. mengubah data kategori pada dataset menjadi 'true' dan 'false' dengan menggunakan One-Hot-Encoding.<br>
-C. menggunakan teknik PCA.<br>
-D. melakukan data splitting menjadi data latih dan data test.<br>
+A. mengubah data kategori pada dataset menjadi 'true' dan 'false' dengan menggunakan One-Hot-Encoding.<br>
+B. melakukan data splitting menjadi data latih dan data test.<br>
+C. melakukan fungsi 'Standarisasi' pada data numerik<br>
 
-**A. Standarisasi pada data numerik.<br>**
-
-| index | gender | race/ethnicity | parental level of education | lunch        | test preparation course | math score | reading score | writing score |
-|:-----:|:------:|:--------------:|:---------------------------:|:------------:|:-----------------------:|:----------:|:-------------:|:-------------:|
-| 0     | female | group B         | bachelor's degree           | standard     | none                    | 0.373174   | 0.168406       | 0.374241       |
-| 1     | female | group C         | some college                | standard     | completed               | 0.164871   | 1.453233       | 1.338567       |
-| 2     | female | group B         | master's degree             | standard     | none                    | 1.622992   | 1.810130       | 1.682969       |
-| 3     | male   | group A         | associate's degree          | free/reduced | none                    | -1.362684  | -0.902283      | -1.692172      |
-| 4     | male   | group C         | some college                | standard     | none                    | 0.650912   | 0.596682       | 0.443121       |
-| ...   | ...    | ...             | ...                         | ...          | ...                     | ...        | ...            | ...            |
-| 995   | female | group E         | master's degree             | standard     | completed               | 1.484123   | 2.095647       | 1.820730       |
-| 996   | male   | group C         | high school                 | free/reduced | none                    | -0.321169  | -1.045042      | -0.934487      |
-| 997   | female | group C         | high school                 | free/reduced | completed               | -0.529472  | 0.097027       | -0.245683      |
-| 998   | female | group D         | some college                | standard     | completed               | 0.095437   | 0.596682       | 0.580882       |
-| 999   | female | group D         | some college                | free/reduced | none                    | 0.720346   | 1.167716       | 1.200806       | 
-<br>
-
-Tabel 1. Tabel standarisasi.<br>
-Pada tabel diatas merupakan hasil dari standarisasi yang telah dilakukan pada data numerik untuk mengubah nilai-nilai angka supaya punya rata-rata (mean) menjadi 0 dan standar deviasi menjadi 1. berikut rumus standarisasi.
-![alt text](./asset/rumus_standar.png)<br>
-Gambar 20. Rumus standarisasi pada data numerik.
-
-**B. One-Hot -Encoding pada data numerik<br>**
+**A. One-Hot -Encoding pada data numerik<br>**
 
 | index | math score | reading score | writing score | gender_female | gender_male | lunch_free_reduced | lunch_free_standard | parental level of education_associate's degree | parental level of education_bachelor's degree | parental level of education_high school | parental level of education_master's degree | parental level of education_some college | parental level of education_some high school | test preparation course_completed | test preparation course_none | race/ethnicity_groupA | race/ethnicity_groupB | race/ethnicity_groupC | race/ethnicity_groupD | race/ethnicity_groupE |
 |:-----:|:----------:|:-------------:|:-------------:|:-------------:|:-----------:|:------------------:|:-------------------:|:----------------------------------------------:|:--------------------------------------------:|:--------------------------------------:|:-------------------------------------------:|:--------------------------------:|:----------------------------------:|:-----------------------------:|:-----------------------:|:-------------------:|:-------------------:|:-------------------:|:-------------------:|:-------------------:|
@@ -220,36 +197,87 @@ Gambar 20. Rumus standarisasi pada data numerik.
 Tabel 2. One-Hot-Encoding pada data kategori.<br>
 Pada tabel diatas merupakan hasil one hot encoding yang kita lakukan pada data kategori yang menghasilkan *False* dan *True* pada semua data bertipe kategori. menggunakan one-hot-encoding dengan teknik **.get_dummies()**
 
-**C. Teknik PCA<br>**
-PCA (Principal Component Analysis) adalah teknik penurunan dimensi yang bertujuan untuk mengubah sekumpulan data asli dengan banyak variabel yang mungkin berkorelasi menjadi sekumpulan variabel baru. dengan hal itulah, teknik PCA pada kolom **'math score', writing score' dan 'reading score'**. mempertahankan komponen PCA seperti gambar dibawah :<br>
-![alt text](./asset/pca.png)<br>
-Gambar 21. informasi komponen PCA.<br>
-Pada gambar diatas merupakan hasil dari komponen PCA yang kita lakukan dengan menggunakan fungsi *.explain _variance_ratio_* pada kolom yang kita komponenkan menjadi tiga. yang diartikan bahwa 89% informasi pada fitur **math score**, 86% informasi pada fitur yang **readning score**.
+**B. Data Splitting<br>**
+Pada proyek ini kita akan menggunakan data split untuk membagi fitur target yang akan kita latih selanjutnya. untuk melakukan itu, perlu mengimport library data split yaitu *train_test_split*, kemudian membagi variabel menjadi 2 buah yaitu X yang berfungsi untuk menghapus kolom *reading score* dan y untuk menampilkan kolom *reading score* lalu dibagi menjadi 4 variabel baru yaitu *X_train, X_test,y_train,y_test menggunakan library *train_test_split* dengan parameter seperti ini :
+- X berfungsi untuk menghapus kolom *reading score*
+- y berfungsi untuk menampilkan target yaitu kolom *reading score*
+- test_size adalah ukuran pembagian dataset yang akan kita lakukan, dengan ketentuan 80% untuk data training dan 20% data testing.
+- random_state digunakan untuk mengontrol random numer generator yang akan digunakan, maka penulis menggunakan **random_state=42**.
 
-**D. Data Splitting<br>**
-Pada proyek ini kita akan menggunakan data split untuk membagi fitur target yang akan kita latih selanjutnya. untuk melakukan itu, perlu mengimport library data split yaitu *train_test_split*, kemudian membagi variabel menjadi 2 buah yaitu X yang berfungsi untuk menghapus kolom *ma
-## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
+setelah melakukan pembagian data pada data splitting, kita bisa mengetahui berapa banyak jumlah sampel pada setiap data yang telah kita bagikan sebelumnya, untuk menampilkan jumlah sampel pada setiap data yang dibagi ialah menggunakan fungsi *len(X_train) dan len(X_test)*. maka berikut hasil split dataset.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+![alt text](./asset/sampel.png)<br>
+Gambar 20. hasil jumlah sample<br>
 
-## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
+**C. Standarisasi<br>**
+Proses Scaling dan Standarisasi membantu untuk membuat fitur data menjadi bentuk yang lebih mudah diolah oleh algoritma. standarisasi adalah teknik tansformasi yang digunakan dalam tahap persiapan pemodelan dengan menggunakan teknik *StandarScaler* dari library *Scikitlearn*.
 
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
+StandarScaler melakukan proses standarisasi fitur dengan mengurangkan mean (nilai rata-rata) setelah itu membaginya dengan standar deviasi, standarsclaer menghasilkan distribusi dengan standar deviasi ialah 1 dan mean ialah 0. ini berfungsi untuk menghindari kebocoran informasi pda data uji.
+## 4. Modeling
+Penulis menerapakan 4 algoritma model mechine learning yang berbeda ialah :
+- K-Nearest Neighbors (KNN)
+- Random Forest
+- ADABOOOST
+- Support Vector Mechine (SVM)<br>
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+**K-Nearest Neighbors (KNN)<br>**
+K-Nearest Neighbors (KNN) bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan lain dengan memilih sejumlah k tetangga terdekat (dengan k adalah sebuah angka positif).<br>
+**Cara Kerja KNN:<br>**
+- menentukan nilai K (jumlah tetangga terdekat).
+- menghitung jarak dengan menggunakan rumus *Euclidean* antara data yang ingin diprediksi.
+- mengambil nilai K terdekat.
+- menampilkan nilai K terbaik.<br>
+**Kelebihan dan kekurangan KNN<br>**
+- **Kelebihan** pada KNN ialah mudah diimplementasikan, cocok untuk data kecil serta tidak memerlukan pelatihan model lainnya.
+- meskipun KNN memiliki kelebihan, maka KNN juga memiliki **Kekurangan** ialah sensitif terhadap fitur yang tidak sesuai, kurang efektif jika terdapat data yang noise dan lambat untuk dataset besar.<br>
+**Random Forest<br>**
+Random Forest adalah algoritma ensemble learning.ide dibalik model ensemble adalah sekelompok model yang bekerja bersama menyelesaikan masalah. Sehingga, tingkat keberhasilan akan lebih tinggi dibanding model yang bekerja sendirian. Pada model ensemble, setiap model harus membuat prediksi secara independen. Kemudian, prediksi dari setiap model ensemble ini digabungkan untuk membuat prediksi akhir.<br>
+**Cara Kerja Random Forest<br>**
+- membuat keputusan dari subset acak data
+- menggabungkan prediksi dari semua pohon<br>
+pada kasus proyek ini bertipe regresi maka digunakan random forest Regressor dari library Scikit-learn dengan beberapa parameter yang digunakan:
+- n_estimator : jumlah trees (pohon) di forest. disini kita menerapkan **n_estimator=50**.
+- max_depth ialah kedalaman atau panjang pohon.bertujuan untuk membagi setiap node ke dalam jumlah pengamatan yang dihasilkan. penulis menerapkan **max_deptg=16**.
+- random_state digunakan untuk mengontrol random number generator yang digunakan, penulis menerapkan **random_state=55**
+- n_jobs ialah jumlah job yang digunakan secara paralel.penulis menerapkan **n_jobs=-1** artinya semua proses berjalan secara paralel.<br>
+**Kelebihan dan kekurangan Random Forest<br>**
+- **Kelebihan** pada Random Forest ialah menghasilkan akurasi tinggi, tidak mudah overfitting dan dapat menangani data besar.
+- **Kekurangan** ialah hasil kurang interpreatif dan ukuran model besar sulit untuk dikembangkan.<br>
+**ADABOOST / BOOSTING<br>**
+Boosting merupakan teknik ensemble yang menggabungkan beberapa model lemah (weak learners) secara berurutan untuk membuat model kuat (strong learner).<br>
+**Cara Kerja Boosting<br>**
+- melatih model lemah pertama.
+- menghitung eror serta membuat model berikutnya untuk memperbaiki eror.
+- menggabungkan semua model dengan bobot tertentu serta mengulangi sampah model cukup baik mencapai batas iterasi.<br>
+**Kelebihan dan kekurangan Boosting <br>**
+- **Kelebihan** pada Boosting ialah dapat mengangani hubungan non-linear yang kompleks dan mudah untuk di implementasikan.
+- **Kekurangan** pada Boosting ialah rentan overfitting jika tidak dikontrol dan banyak parameter yang harus dituning.<br>
+**Support Vector Mechine (SVM)<br>**
+Support Vector Mechine (SVM) merupakan untuk menemukan hyperplane terbaik untuk memisahkan data dari dua kelas dengan margin maksimun.<br>
+**Kekurangan dan kelebihan SVM<br>**
+- **Kelebihan** pada SVM ialah akurat untuk data dengan margin yang jelas , efektif di ruang dimensi tinggi dan mendukung kernel untuk data non-linear.
+- **Kekurangannya** ialah tidak cocok untuk dataset besar sarta perlu penyesuaian parameter.<br>
+Pada proyek ini, penulis menggunakan SVR (Support Vector Regresi). Cara kerja SVR ialah :
+- berusaha meminimalkan eror semua data, tapi hanya meminimalkan error yang berada di luar margin epsilon.
+- membangun sebuah garis yang memiliki deviasi paling keci terhadap semua data.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+## 5. Evaluation
+Pada proyek ini menggunakan model mechine learning bertipe **Regresi**. Metrik yang digunakan untuk melakukan Evaluasi model ialah MSE (Mean Squared Error) yang dimana bertujuan untuk mengukur rata-rata kuadrat selisih antara prediksi dan nilai aktual. berikut rumus MSE :<br>
+![alt text](./asset/mse.png)<br>
+Gambar 21. Rumus MSE<br>
+keterangan :<br>
+n = jumlah dataset<br>
+yi = nilai sebenarnya<br>
+y_pred = nilai yang diprediksi.<br>
 
-**---Ini adalah bagian akhir laporan---**
-
+|           | Train      | Test       |
+|-----------|------------|------------|
+| **KNN**   | 23.643722  | 27.660707  |
+| **RF**    | 2.802247   | 19.136243  |
+| **Boosting** | 19.132377  | 20.327075  |
+| **SVM**   | 25.240321  | 29.443402  |
+<br>
+Tabel 3. Hasil MSE.
 _Catatan:_
 - _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
 - Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
