@@ -127,8 +127,8 @@ Gambar 10. Hasil visualisasi chart bar **reading score**<br>
   ![alt text](./asset/Figure_11.png)<br>
   Gambar 12. Hasil visualisasi kolom **lunch**.<br>
   Pada gambar 12, dapat kita lihat bahwa jenis makan siang yang lebih tinggi ialah *standar* daripada *free/recuded* yang lebih rendah.
-- Kategori Parental level of education<br>
-![alt text](./asset/Figure_7.png)<br>
+- Kategori Parental level of education
+  ![alt text](./asset/Figure_7.png)<br>
 Gambar 13. Hasil visualisasi kolom **parental level of education**.<br>
 Dari gambar 13 merupakan hasil dari visualisasi yang kita lakukan, maka dapat kita lihat bahwa tingkat pendidikan *some college* lebih tinggi dari data lainnya sedangkan yang terendah ialah tingkat pendidikan *master degree*.
 -  Kategori race/ethnicity<br>
@@ -289,7 +289,7 @@ y_pred = nilai yang diprediksi.<br>
 <br>
 Tabel 3. Hasil MSE.<br>
 Pada tabel diatas merupakan hasil MSE yang telah kita lakukan pada data train dan data test. untuk lebih memudahkan penulis menampilkan plot matrik dengan bar chart :<br>
-![alt text(./asset/model.png)<br>
+![alt text](./asset/model.png)<br>
 
 Gambar 22. Visualisasi hasil MSE dari ke 4 algoritma<br>
 Dari gambar diatas, terlihat bahwa model Random forest pada data train memiliki nilai error yang sangat kecil tetapi pada data test memiliki nilai yang tinggi yang mengalami data test overfitting. dibanding dengan model KNN dan SVM memiliki nilai error pada data train dan data test yang tinggi dan untuk model boosting relatif seimbang pada data train dan data test. sehingga model Random Forest yang akan kita pilih sebagai model terbaik untuk melakukan prediksi hasil nilai skor ujian membaca pada siswa.
