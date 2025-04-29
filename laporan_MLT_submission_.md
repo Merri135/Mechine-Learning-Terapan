@@ -14,7 +14,7 @@ Dalam dunia pendidikan, memahami faktor-faktor yang memengaruhi performa siswa s
 Berdasarkan latar belakang diatas, berikut batasan masalah yang akan diselesaikan dalam proyek ini :
 - Apa saja faktor yang berpengaruh terhadap nilai ujian siswa?
 - Apakah terdapat perbedaan signifikan dalam kinerja siswa berdasarkan jenis kelamin dan latar belakang pendidikan orang tua?
-- Bagaimana kita bisa memprediksi performa siswa pada skor ujian menggunakan KNN,SVM,RF dan BOOSTING?
+- Bagaimana kita bisa memprediksi performa siswa pada nilai skor ujian membaca menggunakan KNN,SVM,RF dan BOOSTING?
 
 ### 1.3 Goals
 
@@ -25,13 +25,13 @@ Menjawab batasan masalah yang telah dirangkum dan akan menjawab pertanyaan-perta
 
 ### 1.4 Solution Statment
 
-untuk mencapai tujuan diatas, maka kita perlu melakukan pendekatan pemodelan yang dimana kita akan menggunakan algoritma seperti :
+untuk mencapai tujuan diatas, maka kita perlu melakukan pendekatan pemodelan yang dimana kita akan menggunakan langkah-langkah seperti ini :
 - Analisis  Deskriptif : kita akan menggunakan statistik deskriptif untuk memahami distribusi data. ini mencakup semua nilai skor akademik.
 - Analisis korelasi : menggunakan korelasi untuk melihat hubungan antara berbagai faktor, seperti gender,parental level of education terhadap nilai skor siswa.
 - Model Prediksi : membangun model predeksi berbasis mechine learning seperti
-- Random Forest (RF), K-Nearest Neighbors (KNN), Boosting, Support Vector Machine (SVM) untuk menangani nilai skor siswa.
+- Random Forest (RF), K-Nearest Neighbors (KNN), Boosting, Support Vector Machine (SVM) untuk menangani nilai skor ujian siswa.
 
-**Menggunakan MSE (Mean Absolute Error) pada model yang akan di evaluasi.**
+**Menggunakan MSE (Mean Squared Error) pada model yang akan di evaluasi.**
 
 ## 2. Data Understanding
 
@@ -41,9 +41,9 @@ berikut link dataset yang dianalisa : https://www.kaggle.com/datasets/spscientis
 
 Dataset mentah yang digunakan dalam proyek ini memiliki 1000 baris data dan 8 kolom. Kolom - kolom tersebut terdiri dari 5 kolom kategori dan 3 kolom numerik. untuk penjelasan mengenai variabel-variabel pada Performance Students dataset adalah sebagai berikut:
 - gender : jenis kelamin tiap siswa.
-- lunch : jenis makan siang yang setia hari di konsumsi tiap siswa.
+- lunch : jenis makan siang yang setiap hari di konsumsi tiap siswa.
 - race/ethnicity : jenis kelompok etnis tiap siswa. yang sering dikategorikan dari group A sampai group E.
-- parental level of education : tingkat pendidikan orang (misalnya: high school, bachelor’s degree).
+- parental level of education : tingkat pendidikan orang tua (misalnya: high school, bachelor’s degree).
 - test preparation course : status mengikuti kursus persiapan ujian.
 - math score : nilai skor ujian matematika.
 - reading score : nilai skor ujian membaca.
@@ -75,8 +75,9 @@ dari output pada gambar diatas, maka dilihat bahwa :
 1. terdapat 3 kolom numerik yaitu **math score, writing score dan reading score**.
 2. terdapat 5 kolom kategori yaitu **test preparation course, race/ethnicity, parental level of education, lunch dan age**.
 3. memiliki jumlah 1000 baris dan 8 kolom pada dataset.
+   
 ## 2.1.C Menampilkan data statistik dataset.
-Pada proyek ini, menggunakan perintah .describe() untuk menampilkan dan mengetahui statistik dasar dari kolom **math score, reading score, writing score** seperti percentile, mean, standar deviasi, jumlah data, min dan max. maka berikut tampilan tabel 2 :
+Pada proyek ini, menggunakan perintah .describe() untuk menampilkan dan mengetahui statistik dasar dari kolom **math score, reading score, writing score** seperti percentile, mean, standar deviasi, jumlah data, min dan max. maka berikut tampilannya :
 
 ![alt text](./asset/describe.png)
 
@@ -89,7 +90,8 @@ Pada proyek ini, untuk mengetahui data memiliki missing value dan duplikat data,
 Gambar 4. tampilan missing value.
 
 ![alt text](./asset/duplikat.png)<br>
-Gambar 5. tampilan duplikat data.
+Gambar 5. tampilan duplikat data.<br>
+Pada gambar diatas menunjukkan bahwa dataset PerformanceStudents bersih tanpa missing value dan duplikat data.
 
 ## Exploratory Data Analysis
 ## 2.1.E Melihat outlier pada dataset.
@@ -120,7 +122,7 @@ Gambar 10. Hasil visualisasi chart bar **reading score**<br>
 - Kategori gender<br>
   ![alt text](./asset/Figure_12.png)<br>
   Gambar 11. Hasil Visualisasi kolom **gender**.<br>
-  Pada gambar 111 merupakan hasil dari visualisasi yang dilakukan, dapat kita lihat bahwa jenis kelamin female lebih tinggi dari jenis kelamin male.
+  Pada gambar 11 merupakan hasil dari visualisasi yang dilakukan, dapat kita lihat bahwa jenis kelamin female lebih tinggi dari jenis kelamin male.
 - Kategori lunch<br>
   ![alt text](./asset/Figure_11.png)<br>
   Gambar 12. Hasil visualisasi kolom **lunch**.<br>
@@ -153,31 +155,31 @@ Dari gambar diatas, kita dapat lihat bahwa ketiga mata pelajaran memiliki distri
 Gambar 17. Visualisasi korelasi reading score pada data kategori.<br>
 Pada gambar 17 merupakan hasil visualisasi korelasi *reading score* pada data kategori. dimana yang kita lihat terdapat bar chart relatif sama rata, tetapi ada juga perbedaan yang signifikan yaitu :
 
-- Pada bar chart *parental level of education* yang kita lihat bahwa semakin tinggi tingkat pendidikan orang tua maka nilai matematika tiap siswa lebih tinggi dan semakin rendah tingkat pendidikan orangtua maka nilai matematika tiap siswa lebih rendah. maka hal ini juga mempengaruhi nilai tiap siswa.
-- dari bar chart *race/ethinicity* yang kita lihat bahwa group E memiliki rata-rata nilai matematika yang paling tinggi secara signifikan dari kelompok lainnya serta group D memiliki rata-rata lebih tinggi dari group A,B dan C dan group yang paling rendah ialah group A.
-- dari bar chart *test preparation course* yang kita lihat bahwa ada perbedaan yang relatif tidak merata, dimana completed memiliki rata-rata nilai matematika yang kebih tinggi dibanding dengan none yang memiliki nilai rata-rata matematika yang tergolong rendah.
+- Pada bar chart *parental level of education* yang kita lihat bahwa semakin tinggi tingkat pendidikan orang tua maka nilai membaca tiap siswa lebih tinggi dan semakin rendah tingkat pendidikan orangtua maka nilai membaca tiap siswa lebih rendah. maka hal ini juga mempengaruhi nilai tiap siswa.
+- dari bar chart *race/ethinicity* yang kita lihat bahwa group E memiliki rata-rata nilai membaca yang paling tinggi secara signifikan dari kelompok lainnya serta group D memiliki rata-rata lebih tinggi dari group A,B dan C dan group yang paling rendah ialah group A.
+- dari bar chart *test preparation course* yang kita lihat bahwa ada perbedaan yang relatif tidak merata, dimana completed memiliki rata-rata nilai membaca yang lebih tinggi dibanding dengan none yang memiliki nilai rata-rata membaca yang tergolong rendah.
 - dari bar chart *lunch* yang kita ketahui bahwa jenis makan siang yang lebih tinggi ialah standard dibanding dengan free/educed memiliki nilai rendah.
-- dari bar chart *gender* yang kita ketahui bahwa jenis kelamin yang mendominasi nilai matematika ialah male memiliki skor nilai 65-70 dibanding dengan female memiliki nilai skor 60-65 lebih rendah dari male.
+- dari bar chart *gender* yang kita ketahui bahwa jenis kelamin yang mendominasi nilai membaca ialah female memiliki skor nilai 65-70 dibanding dengan male memiliki nilai skor 60-65 lebih rendah dari female.
 
 **Visualisasi hubungan antar fitur numerik dengan fungsi pairplot.<br>**
 ![alt text](./asset/pairplot.png)<br>
 Gambar 18. Hubungan antar fitur numerik dengan pairplot.<br>
 Pada Gambar 18 merupakan visualisasi hubungan antar fitur numerik dengan fungsi pairplot. Pada Gambar 18 terdapat fungsi pairplot dari library seaborn yang menunjukkan relasi pasangan dalam dataset. Dari grafik, kita dapat melihat plot relasi masing-masing fitur numerik pada dataset.
 
-Pada kasus ini, kita akan melihat relasi antara semua fitur numerik yang ada dengan fitur target kita  yaitu *'math score'*. Untuk membacanya, perhatikan fitur pada sumbu y, temukan fitur target *'math score'*, dan lihatlah grafik relasi antara fitur tersebut pada sumbu y dengan semua fitur pada sumbu x.
+Pada kasus ini, kita akan melihat relasi antara semua fitur numerik yang ada dengan fitur target kita  yaitu *'reading score'*. Untuk membacanya, perhatikan fitur pada sumbu y, temukan fitur target *'reading score'*, dan lihatlah grafik relasi antara fitur tersebut pada sumbu y dengan semua fitur pada sumbu x.
 
 Pada pola sebaran data grafik pairplot sebelumnya, terlihat adanya korelasi positif yang kuat antara setiap pasangan fitur:
 
-'math score' memiliki korelasi positif yang kuat dengan 'reading score'. Hal ini terlihat dari sebaran titik-titik pada scatter plot yang membentuk pola garis lurus menaik dari kiri bawah ke kanan atas.<br>
-'math score' juga memiliki korelasi positif yang kuat dengan 'writing score', ditunjukkan oleh pola sebaran yang serupa.<br>
-Demikian pula, 'reading score' menunjukkan korelasi positif yang kuat dengan 'writing score'.<br>
+'reading score' memiliki korelasi positif yang kuat dengan 'writing score'. Hal ini terlihat dari sebaran titik-titik pada scatter plot yang membentuk pola garis lurus menaik dari kiri bawah ke kanan atas.<br>
+'math score' juga memiliki korelasi positif yang kuat dengan 'reading score', ditunjukkan oleh pola sebaran yang serupa.<br>
+Demikian pula, 'writing score' menunjukkan korelasi positif yang kuat dengan ketiga fitur<br>
 Sebaliknya, tidak terlihat adanya indikasi korelasi yang lemah antar fitur-fitur ini karena sebarannya secara jelas membentuk pola hubungan yang positif.
 
 **Korelasi matriks fitur numeri.<br>**
 ![alt text](./asset/matrik.png)<br>
 Gambar 19. Korelasi matrik fitur numerik.<br>
 Pada gambar diatas merupakan hasil korelasi matrik pada fitur numerik, yang dimana diketahui bahwa setiap dalam sel adalah nilai koefisien korelasi pearson antara dua fitur. dimana nilai antara 1 dan -1 menunjukkan korelasi yang kuat sedangkan nilai yang mendekati 0 menunjukkan korelasi yang lemah.<br>
-dari hasil visualisasi yang kita ketahui bahwa fitur 'reading score' dan 'writing score' keduanya memiliki hubungan yang positif dengan 'math score'. jadi, fitur 'math score' berkorelasi tinggi dengan kedua fitur tersebut.
+dari hasil visualisasi yang kita ketahui bahwa fitur 'math score' dan 'writing score' keduanya memiliki hubungan yang positif dengan 'reading score'. jadi, fitur 'reading score' berkorelasi tinggi dengan kedua fitur tersebut.
 ## 3. Data Preparation
 **3.1 Tahap Preparation :<br>**
 A. mengubah data kategori pada dataset menjadi 'true' dan 'false' dengan menggunakan One-Hot-Encoding.<br>
@@ -215,23 +217,26 @@ Proses Scaling dan Standarisasi membantu untuk membuat fitur data menjadi bentuk
 StandarScaler melakukan proses standarisasi fitur dengan mengurangkan mean (nilai rata-rata) setelah itu membaginya dengan standar deviasi, standarsclaer menghasilkan distribusi dengan standar deviasi ialah 1 dan mean ialah 0. ini berfungsi untuk menghindari kebocoran informasi pda data uji.
 ## 4. Modeling
 Penulis menerapakan 4 algoritma model mechine learning yang berbeda ialah :
-- K-Nearest Neighbors (KNN)
-- Random Forest
-- ADABOOOST
-- Support Vector Mechine (SVM)<br>
+1. K-Nearest Neighbors (KNN)<br>
+2. Random Forest<br>
+3. ADABOOOST<br>
+4. Support Vector Mechine (SVM)<br>
 
-**K-Nearest Neighbors (KNN)<br>**
+**4.1 K-Nearest Neighbors (KNN)<br>**
 K-Nearest Neighbors (KNN) bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan lain dengan memilih sejumlah k tetangga terdekat (dengan k adalah sebuah angka positif).<br>
 **Cara Kerja KNN:<br>**
+
 - menentukan nilai K (jumlah tetangga terdekat).
 - menghitung jarak dengan menggunakan rumus *Euclidean* antara data yang ingin diprediksi.
 - mengambil nilai K terdekat.
 - menampilkan nilai K terbaik.<br>
 **Kelebihan dan kekurangan KNN<br>**
+  
 - **Kelebihan** pada KNN ialah mudah diimplementasikan, cocok untuk data kecil serta tidak memerlukan pelatihan model lainnya.
 - meskipun KNN memiliki kelebihan, maka KNN juga memiliki **Kekurangan** ialah sensitif terhadap fitur yang tidak sesuai, kurang efektif jika terdapat data yang noise dan lambat untuk dataset besar.<br>
-**Random Forest<br>**
+**4.2 Random Forest<br>**
 Random Forest adalah algoritma ensemble learning.ide dibalik model ensemble adalah sekelompok model yang bekerja bersama menyelesaikan masalah. Sehingga, tingkat keberhasilan akan lebih tinggi dibanding model yang bekerja sendirian. Pada model ensemble, setiap model harus membuat prediksi secara independen. Kemudian, prediksi dari setiap model ensemble ini digabungkan untuk membuat prediksi akhir.<br>
+
 **Cara Kerja Random Forest<br>**
 - membuat keputusan dari subset acak data
 - menggabungkan prediksi dari semua pohon<br>
@@ -240,24 +245,29 @@ pada kasus proyek ini bertipe regresi maka digunakan random forest Regressor dar
 - max_depth ialah kedalaman atau panjang pohon.bertujuan untuk membagi setiap node ke dalam jumlah pengamatan yang dihasilkan. penulis menerapkan **max_deptg=16**.
 - random_state digunakan untuk mengontrol random number generator yang digunakan, penulis menerapkan **random_state=55**
 - n_jobs ialah jumlah job yang digunakan secara paralel.penulis menerapkan **n_jobs=-1** artinya semua proses berjalan secara paralel.<br>
+
 **Kelebihan dan kekurangan Random Forest<br>**
 - **Kelebihan** pada Random Forest ialah menghasilkan akurasi tinggi, tidak mudah overfitting dan dapat menangani data besar.
 - **Kekurangan** ialah hasil kurang interpreatif dan ukuran model besar sulit untuk dikembangkan.<br>
-**ADABOOST / BOOSTING<br>**
+
+**4.3 ADABOOST / BOOSTING<br>**
 Boosting merupakan teknik ensemble yang menggabungkan beberapa model lemah (weak learners) secara berurutan untuk membuat model kuat (strong learner).<br>
 **Cara Kerja Boosting<br>**
 - melatih model lemah pertama.
 - menghitung eror serta membuat model berikutnya untuk memperbaiki eror.
 - menggabungkan semua model dengan bobot tertentu serta mengulangi sampah model cukup baik mencapai batas iterasi.<br>
+
 **Kelebihan dan kekurangan Boosting <br>**
 - **Kelebihan** pada Boosting ialah dapat mengangani hubungan non-linear yang kompleks dan mudah untuk di implementasikan.
 - **Kekurangan** pada Boosting ialah rentan overfitting jika tidak dikontrol dan banyak parameter yang harus dituning.<br>
-**Support Vector Mechine (SVM)<br>**
+
+**4.4 Support Vector Mechine (SVM)<br>**
 Support Vector Mechine (SVM) merupakan untuk menemukan hyperplane terbaik untuk memisahkan data dari dua kelas dengan margin maksimun.<br>
+
 **Kekurangan dan kelebihan SVM<br>**
 - **Kelebihan** pada SVM ialah akurat untuk data dengan margin yang jelas , efektif di ruang dimensi tinggi dan mendukung kernel untuk data non-linear.
 - **Kekurangannya** ialah tidak cocok untuk dataset besar sarta perlu penyesuaian parameter.<br>
-Pada proyek ini, penulis menggunakan SVR (Support Vector Regresi). Cara kerja SVR ialah :
+Pada proyek ini, penulis menggunakan **SVR (Support Vector Regresi)**. Cara kerja SVR ialah :
 - berusaha meminimalkan eror semua data, tapi hanya meminimalkan error yang berada di luar margin epsilon.
 - membangun sebuah garis yang memiliki deviasi paling keci terhadap semua data.
 
@@ -277,8 +287,30 @@ y_pred = nilai yang diprediksi.<br>
 | **Boosting** | 19.132377  | 20.327075  |
 | **SVM**   | 25.240321  | 29.443402  |
 <br>
-Tabel 3. Hasil MSE.
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
+Tabel 3. Hasil MSE.<br>
+Pada tabel diatas merupakan hasil MSE yang telah kita lakukan pada data train dan data test. untuk lebih memudahkan penulis menampilkan plot matrik dengan bar chart :<br>
+![alt text](./asset/model.png)<br>
+Gambar 22. Visualisasi hasil MSE dari ke 4 algoritma<br>
+Dari gambar diatas, terlihat bahwa model Random forest pada data train memiliki nilai error yang sangat kecil tetapi pada data test memiliki nilai yang tinggi yang mengalami data test overfitting. dibanding dengan model KNN dan SVM memiliki nilai error pada data train dan data test yang tinggi dan untuk model boosting relatif seimbang pada data train dan data test. sehingga model Random Forest yang akan kita pilih sebagai model terbaik untuk melakukan prediksi hasil nilai skor ujian membaca pada siswa.
 
+untuk mengujinya, penulis membuat prediksi menggunakan beberapa harga dari data test.<br>
+![alt text](./asset/harga.png)<br>
+Gambar 23. Hasil prediksi MSE<br>
+Pada gambar diatas adalah hasil prediksi *'reading score'* dari ke empat algoritma yaitu KNN, Random Forest (RF), Boosting, dan SVM terhadap dua sampel data. Nilai asli (y_true) dibandingkan dengan hasil prediksi dari masing-masing model.
+
+Terlihat bahwa pada sampel pertama (index 68), keempat model memberikan prediksi yang sangat dekat dengan nilai aktual (58), dan Boosting memberikan hasil yang paling mendekati (58.2018). Sedangkan pada sampel kedua (index 214), keempat model cenderung underpredict, dan SVM memberikan hasil prediksi terdekat dengan nilai sebenarnya (91).
+
+Berdasarkan hasil prediksi pada dua sampel, terlihat bahwa model Random Forest (RF) menghasilkan nilai prediksi MSE terkecil sebesar 444.87, diikuti oleh SVM dengan nilai MSE sebesar 486.92, lalu KNN sebesar 616.01, dan Boosting menghasilkan MSE tertinggi sebesar 761.55.
+
+Hal ini menunjukkan bahwa model RF lebih akurat dibandingkan SVM, Boosting maupun KNN dalam memprediksi nilai target.
+
+## Kesimpulan 
+Dapat dilihat dari empat model algoritma yang diuji, yaitu KNN, Random Forest, Boosting, dan SVM, bahwa dari hasil perbandingan prediksi serta visualisasi error pada data train dan test, masing-masing model menunjukkan performa yang bervariasi.
+
+Berdasarkan grafik perbandingan nilai error (MSE) pada data test, *model Boosting* **memiliki nilai error yang paling kecil**, menandakan bahwa model ini paling stabil dan memiliki kemampuan generalisasi yang baik. Kemudian, *model KNN* **memiliki nilai error yang sedikit lebih tinggi** dibandingkan Boosting. Sementara itu, *model Random Forest* **memiliki nilai error lebih tinggi lagi, menunjukkan adanya overfitting karena selisih yang signifikan antara error data train dan test.**
+
+Sedangkan model SVM menunjukkan nilai error yang paling tinggi di antara keempat model, baik pada data train maupun test, yang mengindikasikan bahwa SVM cenderung underfitting pada data ini.
+
+## Referensi 
+https://www.ijraset.com/research-paper/ensemble-models-for-analyzing-students-key-performance-factors Regression and Ensemble Models for Analyzing Students' Key Performance Factors.<br>
+https://github.com/samsohail/Students-Performance-Prediction?utm_source=chatgpt.com 
