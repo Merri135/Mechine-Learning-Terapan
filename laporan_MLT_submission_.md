@@ -13,23 +13,22 @@ Dalam dunia pendidikan, memahami faktor-faktor yang memengaruhi performa siswa s
 ### 1.2 Problem Statements
 Berdasarkan latar belakang diatas, berikut batasan masalah yang akan diselesaikan dalam proyek ini :
 - Apa saja faktor yang berpengaruh terhadap nilai ujian siswa?
-- Apakah terdapat perbedaan signifikan dalam kinerja siswa berdasarkan jenis kelamin dan latar belakang pendidikan orang tua?
+- Bagaimana perbandingan persentase siswa yang lulus dan gagal berdasarkan akademik
 - Bagaimana kita bisa memprediksi performa siswa pada nilai skor ujian membaca menggunakan KNN,SVM,RF dan BOOSTING?
 
 ### 1.3 Goals
 
 Menjawab batasan masalah yang telah dirangkum dan akan menjawab pertanyaan-pertanyaan diatas, berikut tujuan masalahnya :
 - Kita perlu untuk menganalisis faktor yang berpengaruh pada nilai skor siswa.
-- Kita perlu untuk melakukan visualisasi untuk melihat perbedaan kinerja siswa menurut gender dan parental level of education.
+- Kita perlu untuk melakukan visualisasi untuk melihat persentase siswa yang lulus dan gagal berdasarkan akademik
 - Kita perlu untuk membangun model prediksi performa siswa menggunakan ke empat algoritma yaitu KNN,RF,SVM dan BOOSTING.
 
 ### 1.4 Solution Statment
 
 untuk mencapai tujuan diatas, maka kita perlu melakukan pendekatan pemodelan yang dimana kita akan menggunakan langkah-langkah seperti ini :
 - Analisis  Deskriptif : kita akan menggunakan statistik deskriptif untuk memahami distribusi data. ini mencakup semua nilai skor akademik.
-- Analisis korelasi : menggunakan korelasi untuk melihat hubungan antara berbagai faktor, seperti gender,parental level of education terhadap nilai skor siswa.
-- Model Prediksi : membangun model predeksi berbasis mechine learning seperti
-- Random Forest (RF), K-Nearest Neighbors (KNN), Boosting, Support Vector Machine (SVM) untuk menangani nilai skor ujian siswa.
+- Analisis korelasi : menggunakan korelasi untuk melihat hubungan antara berbagai faktor yang mempengaruhi skor nilai siswa.
+- Model Prediksi : membangun model predeksi berbasis mechine learning seperti Random Forest (RF), K-Nearest Neighbors (KNN), Boosting, Support Vector Machine (SVM) untuk menangani nilai skor ujian siswa.
 
 **Menggunakan MSE (Mean Squared Error) pada model yang akan di evaluasi.**
 
@@ -155,25 +154,12 @@ Dari gambar diatas, kita dapat lihat bahwa ketiga mata pelajaran memiliki distri
 Gambar 17. Visualisasi korelasi reading score pada data kategori.<br>
 Pada gambar 17 merupakan hasil visualisasi korelasi *reading score* pada data kategori. dimana yang kita lihat terdapat bar chart relatif sama rata, tetapi ada juga perbedaan yang signifikan yaitu :
 
-- Pada bar chart *parental level of education* yang kita lihat bahwa semakin tinggi tingkat pendidikan orang tua maka nilai membaca tiap siswa lebih tinggi dan semakin rendah tingkat pendidikan orangtua maka nilai membaca tiap siswa lebih rendah. maka hal ini juga mempengaruhi nilai tiap siswa.
-- dari bar chart *race/ethinicity* yang kita lihat bahwa group E memiliki rata-rata nilai membaca yang paling tinggi secara signifikan dari kelompok lainnya serta group D memiliki rata-rata lebih tinggi dari group A,B dan C dan group yang paling rendah ialah group A.
-- dari bar chart *test preparation course* yang kita lihat bahwa ada perbedaan yang relatif tidak merata, dimana completed memiliki rata-rata nilai membaca yang lebih tinggi dibanding dengan none yang memiliki nilai rata-rata membaca yang tergolong rendah.
-- dari bar chart *lunch* yang kita ketahui bahwa jenis makan siang yang lebih tinggi ialah standard dibanding dengan free/educed memiliki nilai rendah.
-- dari bar chart *gender* yang kita ketahui bahwa jenis kelamin yang mendominasi nilai membaca ialah female memiliki skor nilai 65-70 dibanding dengan male memiliki nilai skor 60-65 lebih rendah dari female.
+- Pada bar chart *parental level of education* yang kita lihat bahwa semakin tinggi tingkat pendidikan orang tua maka skor nilai akademik tiap siswa lebih tinggi dan semakin rendah tingkat pendidikan orangtua maka skor nilai akademik tiap siswa lebih rendah. maka jika kita menganalisa dari gambar diatas bahwa rentang nilai antar **tingkat pendidikan orang tua terlihat lebih lebar pada mata pelajaran membaca dan menulis** dibandingkan dengan **matematika.** Ini mengindikasikan bahwa tingkat pendidikan orang tua mungkin memiliki pengaruh yang lebih besar pada kemampuan membaca dan menulis siswa.
+- dari bar chart *race/ethinicity* yang kita lihat bahwa Kelompok E cenderung memiliki rata-rata nilai tertinggi secara keseluruhan dibandingkan kelompok lain, **terutama dalam mata pelajaran membaca dan menulis** dan Kelompok A cenderung memiliki rata-rata nilai terendah di antara kelompok lain dalam ketiga mata pelajaran. 
+- dari bar chart *test preparation course* yang kita lihat bahwa ada perbedaan yang relatif tidak merata, dimana siswa yang mengikuti kursus persiapan tes cenderung memiliki rata-rata nilai yang lebih tinggi secara signifikan dalam ketiga mata pelajaran *matematika, membaca, dan menulis* dibandingkan dengan siswa yang tidak mengikuti kursus. tetapi dari yang kita ketahui bahwa perbedaan rata-rata nilai antara kedua kelompok **mengikuti kursus vs. tidak mengikuti kursus** tampak **paling besar pada mata pelajaran membaca dan menulis** dibanding dengan mata pelajaran **matematika**.
+- dari bar chart *lunch* yang kita ketahui bahwa siswa yang mendapatkan **makan siang standar cenderung memiliki rata-rata nilai yang lebih tinggi** dalam ketiga mata pelajaran *matematika, membaca, dan menulis* dibandingkan dengan siswa yang mendapatkan **makan siang gratis**. walaupun begitu, perbedaan rata-rata nilai tampak paling besar pada **mata pelajaran membaca** dibanding dengan **mata pelajaran matematika dan menulis.**
+- dari bar chart *gender* yang kita ketahui bahwa terdapat perbedaan rata-rata nilai antara siswa perempuan dan laki-laki dalam mata pelajaran membaca dan menulis. **Siswa perempuan** cenderung memiliki rata-rata skor yang **lebih tinggi** dalam kedua mata pelajaran ini dibandingkan **siswa laki-laki** dan kita ketahui bahwa **siswa perempuan** menunjukkan keunggulan yang lebih jelas dalam kemampuan verbal **membaca dan menulis**, sementara performa dalam **matematika** hampir setara dengan **siswa laki-laki.**
 
-**Visualisasi hubungan antar fitur numerik dengan fungsi pairplot.<br>**
-![alt text](./asset/pairplot.png)<br>
-Gambar 18. Hubungan antar fitur numerik dengan pairplot.<br>
-Pada Gambar 18 merupakan visualisasi hubungan antar fitur numerik dengan fungsi pairplot. Pada Gambar 18 terdapat fungsi pairplot dari library seaborn yang menunjukkan relasi pasangan dalam dataset. Dari grafik, kita dapat melihat plot relasi masing-masing fitur numerik pada dataset.
-
-Pada kasus ini, kita akan melihat relasi antara semua fitur numerik yang ada dengan fitur target kita  yaitu *'reading score'*. Untuk membacanya, perhatikan fitur pada sumbu y, temukan fitur target *'reading score'*, dan lihatlah grafik relasi antara fitur tersebut pada sumbu y dengan semua fitur pada sumbu x.
-
-Pada pola sebaran data grafik pairplot sebelumnya, terlihat adanya korelasi positif yang kuat antara setiap pasangan fitur:
-
-'reading score' memiliki korelasi positif yang kuat dengan 'writing score'. Hal ini terlihat dari sebaran titik-titik pada scatter plot yang membentuk pola garis lurus menaik dari kiri bawah ke kanan atas.<br>
-'math score' juga memiliki korelasi positif yang kuat dengan 'reading score', ditunjukkan oleh pola sebaran yang serupa.<br>
-Demikian pula, 'writing score' menunjukkan korelasi positif yang kuat dengan ketiga fitur<br>
-Sebaliknya, tidak terlihat adanya indikasi korelasi yang lemah antar fitur-fitur ini karena sebarannya secara jelas membentuk pola hubungan yang positif.
 
 **Korelasi matriks fitur numeri.<br>**
 ![alt text](./asset/matrik.png)<br>
