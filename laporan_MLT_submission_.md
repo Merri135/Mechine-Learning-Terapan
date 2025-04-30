@@ -144,15 +144,15 @@ Pada gambar 15 merupakan hasil visualisasi yang kita lakukan, maka dapat kita li
 Gambar 16. History kolom numerik<br>
 Dari gambar diatas, kita dapat lihat bahwa ketiga mata pelajaran memiliki distribusi mendekati normal, dapat kita lihat dari mata pelajaran *matematika* sedikit lebih *rendah* diantara 60-70, mata pelajaran *reading* cenderung lebih sedikit lebih tinggi diantara 65-75 dan mata pelajaran *writing* hampir sama dengan mata pelajaran *matematika* hanya 0.5% naik dibanding *matematika*.
 
-**Visualisasi korelasi math score terhadap data kategori<br>**
+**Visualisasi korelasi data numerik terhadap data kategori<br>**
 
 ![alt text](./asset/parental.png)<br>
 ![alt text](./asset/race.png)<br>
 ![alt text](./asset/test.png)<br>
 ![alt text](./asset/lunch.png)<br>
 ![alt text](./asset/gender.png)<br>
-Gambar 17. Visualisasi korelasi reading score pada data kategori.<br>
-Pada gambar 17 merupakan hasil visualisasi korelasi *reading score* pada data kategori. dimana yang kita lihat terdapat bar chart relatif sama rata, tetapi ada juga perbedaan yang signifikan yaitu :
+Gambar 17. Visualisasi korelasi data numerik pada data kategori.<br>
+Pada gambar 17 merupakan hasil visualisasi korelasi semua *mata pelajaran* pada data kategori. dimana yang kita lihat terdapat bar chart relatif sama rata, tetapi ada juga perbedaan yang signifikan yaitu :
 
 - Pada bar chart *parental level of education* yang kita lihat bahwa semakin tinggi tingkat pendidikan orang tua maka skor nilai akademik tiap siswa lebih tinggi dan semakin rendah tingkat pendidikan orangtua maka skor nilai akademik tiap siswa lebih rendah. maka jika kita menganalisa dari gambar diatas bahwa rentang nilai antar **tingkat pendidikan orang tua terlihat lebih lebar pada mata pelajaran membaca dan menulis** dibandingkan dengan **matematika.** Ini mengindikasikan bahwa tingkat pendidikan orang tua mungkin memiliki pengaruh yang lebih besar pada kemampuan membaca dan menulis siswa.
 - dari bar chart *race/ethinicity* yang kita lihat bahwa Kelompok E cenderung memiliki rata-rata nilai tertinggi secara keseluruhan dibandingkan kelompok lain, **terutama dalam mata pelajaran membaca dan menulis** dan Kelompok A cenderung memiliki rata-rata nilai terendah di antara kelompok lain dalam ketiga mata pelajaran. 
@@ -161,7 +161,7 @@ Pada gambar 17 merupakan hasil visualisasi korelasi *reading score* pada data ka
 - dari bar chart *gender* yang kita ketahui bahwa terdapat perbedaan rata-rata nilai antara siswa perempuan dan laki-laki dalam mata pelajaran membaca dan menulis. **Siswa perempuan** cenderung memiliki rata-rata skor yang **lebih tinggi** dalam kedua mata pelajaran ini dibandingkan **siswa laki-laki** dan kita ketahui bahwa **siswa perempuan** menunjukkan keunggulan yang lebih jelas dalam kemampuan verbal **membaca dan menulis**, sementara performa dalam **matematika** hampir setara dengan **siswa laki-laki.**
 
 
-**Korelasi matriks fitur numeri.<br>**
+**Korelasi matriks fitur numerik.<br>**
 ![alt text](./asset/matrik.png)<br>
 Gambar 19. Korelasi matrik fitur numerik.<br>
 Pada gambar diatas merupakan hasil korelasi matrik pada fitur numerik, yang dimana diketahui bahwa setiap dalam sel adalah nilai koefisien korelasi pearson antara dua fitur. dimana nilai antara 1 dan -1 menunjukkan korelasi yang kuat sedangkan nilai yang mendekati 0 menunjukkan korelasi yang lemah.<br>
