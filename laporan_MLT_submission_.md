@@ -169,7 +169,7 @@ Gambar 19. Korelasi matrik fitur numerik.<br>
 Pada gambar diatas merupakan hasil korelasi matrik pada fitur numerik, yang dimana diketahui bahwa setiap dalam sel adalah nilai koefisien korelasi pearson antara dua fitur. dimana nilai antara 1 dan -1 menunjukkan korelasi yang kuat sedangkan nilai yang mendekati 0 menunjukkan korelasi yang lemah.<br>
 dari hasil visualisasi yang kita ketahui bahwa fitur 'math score' dan 'writing score' keduanya memiliki hubungan yang positif dengan 'reading score'. jadi, fitur 'reading score' berkorelasi tinggi dengan kedua fitur tersebut.
 ## Data Preparation
-### Tahap Preparation :**
+### Tahap Preparation
 - mengubah data kategori pada dataset menjadi 'true' dan 'false' dengan menggunakan One-Hot-Encoding.<br>
 - melakukan data splitting menjadi data latih dan data test.<br>
 - melakukan fungsi 'Standarisasi' pada data numerik<br>
