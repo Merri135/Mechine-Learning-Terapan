@@ -49,12 +49,12 @@ Dataset mentah yang digunakan dalam proyek ini memiliki 1000 baris data dan 8 ko
 - writing score : nilai skor ujian menulis.
 
 ### Langkah - Langkah Pemrosesan data
-A. memasukkan dataset kedalam dataframe menggunakan library pandas.<br>
-B. menampilkan informasi dari dataset.<br>
-C. menampilkan jumlah data statistik pada dataset.<br>
-D. menampilkan jumlah missing value dan duplikat data pada dataset.<br>
-E. menangani outlier.<br>
-F. menampilkan visualisasi antar fitur numerik antar kategorial.<br>
+- memasukkan dataset kedalam dataframe menggunakan library pandas.<br>
+- menampilkan informasi dari dataset.<br>
+- menampilkan jumlah data statistik pada dataset.<br>
+- menampilkan jumlah missing value dan duplikat data pada dataset.<br>
+- menangani outlier.<br>
+- menampilkan visualisasi antar fitur numerik antar kategorial.<br>
 
 #### Membuat dataframe dengan library pandas.
 Pada proyek ini, menggunakan fungsi **.read** untuk memasukkan dataset PerformanceStudents.csv kedalam bentuk dataframe menggunakan library pandas dan dataframe yang tersimpan ialah **insu_df**. setelah itu, untuk menampilkan 10 data pertama maka menggunakan **.head(10)**. maka berikut tampilannya :
