@@ -2,28 +2,28 @@
 
 ## Domain Proyek
 
-### 1 Latar Belakang 
+###  Latar Belakang 
 
 Pendidikan merupakan salah satu pilar utama dalam pembangunan suatu bangsa. Kualitas pendidikan tidak hanya ditentukan oleh kurikulum dan fasilitas, tetapi juga oleh berbagai faktor individu dan sosial yang memengaruhi hasil belajar siswa. Salah satu cara untuk mengevaluasi hasil belajar siswa adalah melalui performa mereka dalam ujian akademik.
   
-## 1.1 Business Understanding
+## Business Understanding
 
 Dalam dunia pendidikan, memahami faktor-faktor yang memengaruhi performa siswa sangat krusial untuk meningkatkan kualitas pembelajaran dan mencegah ketimpangan hasil akademik. Melalui pendekatan analisis data dan machine learning, kita dapat mengklarifikasi permasalahan, merumuskan tujuan, serta menyusun solusi prediktif untuk membantu pengambilan keputusan di bidang pendidikan.
 
-### 1.2 Problem Statements
+### Problem Statements
 Berdasarkan latar belakang diatas, berikut batasan masalah yang akan diselesaikan dalam proyek ini :
 - Apa saja faktor yang berpengaruh terhadap nilai ujian siswa?
 - Bagaimana perbandingan persentase siswa yang lulus dan gagal berdasarkan akademik
 - Bagaimana kita bisa memprediksi performa siswa pada nilai skor ujian membaca menggunakan KNN,SVM,RF dan BOOSTING?
 
-### 1.3 Goals
+### Goals
 
 Menjawab batasan masalah yang telah dirangkum dan akan menjawab pertanyaan-pertanyaan diatas, berikut tujuan masalahnya :
 - Kita perlu untuk menganalisis faktor yang berpengaruh pada nilai skor siswa.
 - Kita perlu untuk melakukan visualisasi untuk melihat persentase siswa yang lulus dan gagal berdasarkan akademik
 - Kita perlu untuk membangun model prediksi performa siswa menggunakan ke empat algoritma yaitu KNN,RF,SVM dan BOOSTING.
 
-### 1.4 Solution Statment
+### Solution Statment
 
 untuk mencapai tujuan diatas, maka kita perlu melakukan pendekatan pemodelan yang dimana kita akan menggunakan langkah-langkah seperti ini :
 - Analisis  Deskriptif : kita akan menggunakan statistik deskriptif untuk memahami distribusi data. ini mencakup semua nilai skor akademik.
@@ -32,7 +32,7 @@ untuk mencapai tujuan diatas, maka kita perlu melakukan pendekatan pemodelan yan
 
 **Menggunakan MSE (Mean Squared Error) pada model yang akan di evaluasi.**
 
-## 2. Data Understanding
+## Data Understanding
 
 Dataset yang digunakan dalam proyek ini berisi informasi tentang performa akademik siswa berdasarkan beberapa faktor demografis dan sosial, seperti jenis kelamin, kelompok etnis, tingkat pendidikan orang tua, status mengikuti kursus persiapan ujian, dan jenis makan siang yang dikonsumsi. Selain itu, dataset ini juga mencatat skor ujian siswa dalam tiga mata pelajaran utama, yaitu **matematika (math score), membaca (reading score), dan menulis (writing score).**
 
@@ -48,7 +48,7 @@ Dataset mentah yang digunakan dalam proyek ini memiliki 1000 baris data dan 8 ko
 - reading score : nilai skor ujian membaca.
 - writing score : nilai skor ujian menulis.
 
-## 2.1 Langkah - Langkah Pemrosesan data
+### Langkah - Langkah Pemrosesan data
 A. memasukkan dataset kedalam dataframe menggunakan library pandas.<br>
 B. menampilkan informasi dari dataset.<br>
 C. menampilkan jumlah data statistik pada dataset.<br>
@@ -56,14 +56,14 @@ D. menampilkan jumlah missing value dan duplikat data pada dataset.<br>
 E. menangani outlier.<br>
 F. menampilkan visualisasi antar fitur numerik antar kategorial.<br>
 
- ## 2.1.A Membuat dataframe dengan library pandas.
+#### Membuat dataframe dengan library pandas.
 Pada proyek ini, menggunakan fungsi **.read** untuk memasukkan dataset PerformanceStudents.csv kedalam bentuk dataframe menggunakan library pandas dan dataframe yang tersimpan ialah **insu_df**. setelah itu, untuk menampilkan 10 data pertama maka menggunakan **.head(10)**. maka berikut tampilannya :
 
 ![alt text](./asset/head.png)
 
 Gambar 1. tampilan 10 data pertama pada dataset insu_df.
 
-## 2.1.B Menampilkan informasi dari dataset.
+#### Menampilkan informasi dari dataset
 Pada proyek ini,untuk memahami semua atribut-atribut yang dipakai, memakai fungsi library python yaitu .info() untuk menampilkan atribut-atribut dan baris serta kolom pada dataset. dimana perintah .info() berfungsi untuk menampilkan semua tipe data pada masing-masing atribut dalam dataset.
 
 ![alt text](./asset/info.png)
@@ -75,14 +75,14 @@ dari output pada gambar diatas, maka dilihat bahwa :
 2. terdapat 5 kolom kategori yaitu **test preparation course, race/ethnicity, parental level of education, lunch dan age**.
 3. memiliki jumlah 1000 baris dan 8 kolom pada dataset.
    
-## 2.1.C Menampilkan data statistik dataset.
+#### Menampilkan data statistik dataset.
 Pada proyek ini, menggunakan perintah .describe() untuk menampilkan dan mengetahui statistik dasar dari kolom **math score, reading score, writing score** seperti percentile, mean, standar deviasi, jumlah data, min dan max. maka berikut tampilannya :
 
 ![alt text](./asset/describe.png)
 
 gambar 3. keluaran statistik pada dataset insu_df menggunakan fungsi .describe(). 
 
-## 2.1.D Menampilkan missing value dan duplikat data pada dataset.
+#### Menampilkan missing value dan duplikat data pada dataset.
 Pada proyek ini, untuk mengetahui data memiliki missing value dan duplikat data, maka menggunakan perintah fungsi .insnull() dan .duplicated() pada dataset insu_df, setelah melakukan perintah tersebut, maka akan menampilkan kolom yang memiliki missing value dan jumlah duplikat. maka beikut tampilannya :
 
 ![alt text](./asset/missing.png)<br>
@@ -93,7 +93,7 @@ Gambar 5. tampilan duplikat data.<br>
 Pada gambar diatas menunjukkan bahwa dataset PerformanceStudents bersih tanpa missing value dan duplikat data.
 
 ## Exploratory Data Analysis
-## 2.1.E Melihat outlier pada dataset.
+### Melihat outlier pada dataset.
 Pada kasus ini, kita akan melihat outlier dalam setiap kolom pada dataset, outlier sendiri adalah hasil pengamatan yang kemunculannya sangat jarang dan berbeda dari hasil pengamatan lainnya. maka berikut tampilan kolom yang outlier :
 ![alt text](./asset/sebelum.png)<br>
 Gambar 6. tampilan sebelum menangani outlier.<br>
@@ -102,7 +102,9 @@ dari gambar diatas, terdapat outlier pada kolom math score,reading score dan wri
 setelah melakukan penanganan outlier pada kolom dataset, kita dapat melihat hasil dari penanganan outlier yang telah kita lakukan, maka tampilan hasil penganganan outlier, sebagai berikut :<br>
 ![alt text](./asset/setelah.png)<br>
 Gambar 7. setelah melakukan pengangan outlier.<br>
-## 2.1.F Menampilkan distribusi numerik dan kategori
+
+#### Menampilkan distribusi numerik dan kategori
+
 **Visualisasi Numeric Fitur**
 - Numeric math score<br>
   ![alt text](./asset/Figure3.png)<br>
@@ -166,13 +168,13 @@ Pada gambar 17 merupakan hasil visualisasi korelasi semua *mata pelajaran* pada 
 Gambar 19. Korelasi matrik fitur numerik.<br>
 Pada gambar diatas merupakan hasil korelasi matrik pada fitur numerik, yang dimana diketahui bahwa setiap dalam sel adalah nilai koefisien korelasi pearson antara dua fitur. dimana nilai antara 1 dan -1 menunjukkan korelasi yang kuat sedangkan nilai yang mendekati 0 menunjukkan korelasi yang lemah.<br>
 dari hasil visualisasi yang kita ketahui bahwa fitur 'math score' dan 'writing score' keduanya memiliki hubungan yang positif dengan 'reading score'. jadi, fitur 'reading score' berkorelasi tinggi dengan kedua fitur tersebut.
-## 3. Data Preparation
-**3.1 Tahap Preparation :<br>**
-A. mengubah data kategori pada dataset menjadi 'true' dan 'false' dengan menggunakan One-Hot-Encoding.<br>
-B. melakukan data splitting menjadi data latih dan data test.<br>
-C. melakukan fungsi 'Standarisasi' pada data numerik<br>
+## Data Preparation
+### Tahap Preparation :**
+- mengubah data kategori pada dataset menjadi 'true' dan 'false' dengan menggunakan One-Hot-Encoding.<br>
+- melakukan data splitting menjadi data latih dan data test.<br>
+- melakukan fungsi 'Standarisasi' pada data numerik<br>
 
-**A. One-Hot -Encoding pada data numerik<br>**
+**One-Hot -Encoding pada data numerik<br>**
 
 | index | math score | reading score | writing score | gender_female | gender_male | lunch_free_reduced | lunch_free_standard | parental level of education_associate's degree | parental level of education_bachelor's degree | parental level of education_high school | parental level of education_master's degree | parental level of education_some college | parental level of education_some high school | test preparation course_completed | test preparation course_none | race/ethnicity_groupA | race/ethnicity_groupB | race/ethnicity_groupC | race/ethnicity_groupD | race/ethnicity_groupE |
 |:-----:|:----------:|:-------------:|:-------------:|:-------------:|:-----------:|:------------------:|:-------------------:|:----------------------------------------------:|:--------------------------------------------:|:--------------------------------------:|:-------------------------------------------:|:--------------------------------:|:----------------------------------:|:-----------------------------:|:-----------------------:|:-------------------:|:-------------------:|:-------------------:|:-------------------:|:-------------------:|
@@ -185,7 +187,7 @@ C. melakukan fungsi 'Standarisasi' pada data numerik<br>
 Tabel 2. One-Hot-Encoding pada data kategori.<br>
 Pada tabel diatas merupakan hasil one hot encoding yang kita lakukan pada data kategori yang menghasilkan *False* dan *True* pada semua data bertipe kategori. menggunakan one-hot-encoding dengan teknik **.get_dummies()**
 
-**B. Data Splitting<br>**
+**Data Splitting<br>**
 Pada proyek ini kita akan menggunakan data split untuk membagi fitur target yang akan kita latih selanjutnya. untuk melakukan itu, perlu mengimport library data split yaitu *train_test_split*, kemudian membagi variabel menjadi 2 buah yaitu X yang berfungsi untuk menghapus kolom *reading score* dan y untuk menampilkan kolom *reading score* lalu dibagi menjadi 4 variabel baru yaitu *X_train, X_test,y_train,y_test menggunakan library *train_test_split* dengan parameter seperti ini :
 - X berfungsi untuk menghapus kolom *reading score*
 - y berfungsi untuk menampilkan target yaitu kolom *reading score*
@@ -197,18 +199,18 @@ setelah melakukan pembagian data pada data splitting, kita bisa mengetahui berap
 ![alt text](./asset/sampel.png)<br>
 Gambar 20. hasil jumlah sample<br>
 
-**C. Standarisasi<br>**
+**Standarisasi<br>**
 Proses Scaling dan Standarisasi membantu untuk membuat fitur data menjadi bentuk yang lebih mudah diolah oleh algoritma. standarisasi adalah teknik tansformasi yang digunakan dalam tahap persiapan pemodelan dengan menggunakan teknik *StandarScaler* dari library *Scikitlearn*.
 
 StandarScaler melakukan proses standarisasi fitur dengan mengurangkan mean (nilai rata-rata) setelah itu membaginya dengan standar deviasi, standarsclaer menghasilkan distribusi dengan standar deviasi ialah 1 dan mean ialah 0. ini berfungsi untuk menghindari kebocoran informasi pda data uji.
-## 4. Modeling
+## Modeling
 Penulis menerapakan 4 algoritma model mechine learning yang berbeda ialah :
 1. K-Nearest Neighbors (KNN)<br>
 2. Random Forest<br>
 3. ADABOOOST<br>
 4. Support Vector Mechine (SVM)<br>
 
-**4.1 K-Nearest Neighbors (KNN)<br>**
+#### K-Nearest Neighbors (KNN)
 K-Nearest Neighbors (KNN) bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan lain dengan memilih sejumlah k tetangga terdekat (dengan k adalah sebuah angka positif).<br>
 **Cara Kerja KNN:<br>**
 
@@ -220,7 +222,7 @@ K-Nearest Neighbors (KNN) bekerja dengan membandingkan jarak satu sampel ke samp
   
 - **Kelebihan** pada KNN ialah mudah diimplementasikan, cocok untuk data kecil serta tidak memerlukan pelatihan model lainnya.
 - meskipun KNN memiliki kelebihan, maka KNN juga memiliki **Kekurangan** ialah sensitif terhadap fitur yang tidak sesuai, kurang efektif jika terdapat data yang noise dan lambat untuk dataset besar.<br>
-**4.2 Random Forest<br>**
+#### Random Forest
 Random Forest adalah algoritma ensemble learning.ide dibalik model ensemble adalah sekelompok model yang bekerja bersama menyelesaikan masalah. Sehingga, tingkat keberhasilan akan lebih tinggi dibanding model yang bekerja sendirian. Pada model ensemble, setiap model harus membuat prediksi secara independen. Kemudian, prediksi dari setiap model ensemble ini digabungkan untuk membuat prediksi akhir.<br>
 
 **Cara Kerja Random Forest<br>**
@@ -236,7 +238,7 @@ pada kasus proyek ini bertipe regresi maka digunakan random forest Regressor dar
 - **Kelebihan** pada Random Forest ialah menghasilkan akurasi tinggi, tidak mudah overfitting dan dapat menangani data besar.
 - **Kekurangan** ialah hasil kurang interpreatif dan ukuran model besar sulit untuk dikembangkan.<br>
 
-**4.3 ADABOOST / BOOSTING<br>**
+#### ADABOOST / BOOSTING
 Boosting merupakan teknik ensemble yang menggabungkan beberapa model lemah (weak learners) secara berurutan untuk membuat model kuat (strong learner).<br>
 **Cara Kerja Boosting<br>**
 - melatih model lemah pertama.
@@ -247,7 +249,7 @@ Boosting merupakan teknik ensemble yang menggabungkan beberapa model lemah (weak
 - **Kelebihan** pada Boosting ialah dapat mengangani hubungan non-linear yang kompleks dan mudah untuk di implementasikan.
 - **Kekurangan** pada Boosting ialah rentan overfitting jika tidak dikontrol dan banyak parameter yang harus dituning.<br>
 
-**4.4 Support Vector Mechine (SVM)<br>**
+#### Support Vector Mechine (SVM)
 Support Vector Mechine (SVM) merupakan untuk menemukan hyperplane terbaik untuk memisahkan data dari dua kelas dengan margin maksimun.<br>
 
 **Kekurangan dan kelebihan SVM<br>**
@@ -257,7 +259,7 @@ Pada proyek ini, penulis menggunakan **SVR (Support Vector Regresi)**. Cara kerj
 - berusaha meminimalkan eror semua data, tapi hanya meminimalkan error yang berada di luar margin epsilon.
 - membangun sebuah garis yang memiliki deviasi paling keci terhadap semua data.
 
-## 5. Evaluation
+## Evaluation
 Pada proyek ini menggunakan model mechine learning bertipe **Regresi**. Metrik yang digunakan untuk melakukan Evaluasi model ialah MSE (Mean Squared Error) yang dimana bertujuan untuk mengukur rata-rata kuadrat selisih antara prediksi dan nilai aktual. berikut rumus MSE :<br>
 ![alt text](./asset/mse.png)<br>
 Gambar 21. Rumus MSE<br>
