@@ -300,10 +300,11 @@ y_pred = nilai yang diprediksi.<br>
 
 |           | Train      | Test       |
 |-----------|------------|------------|
-| **KNN**   | 23.643722  | 27.660707  |
-| **RF**    | 2.802247   | 19.136243  |
-| **Boosting** | 19.132377  | 20.327075  |
-| **SVM**   | 25.240321  | 29.443402  |
+| **KNN**   | 4.607423  | 6.381308  |
+| **RF**    | 0.081564 | 0.569088  |
+| **Boosting** | 6.252855	| 8.098882  |
+| **SVM**   | 11.754703 |	14.262057
+  |
 <br>
 Tabel 3. Hasil MSE.<br>
 Pada tabel diatas merupakan hasil MSE yang telah kita lakukan pada data train dan data test. untuk lebih memudahkan penulis menampilkan plot matrik dengan bar chart.
@@ -311,27 +312,26 @@ Pada tabel diatas merupakan hasil MSE yang telah kita lakukan pada data train da
 ![alt text](./asset/model.png)<br>
 
 Gambar 23. Visualisasi hasil MSE dari ke 4 algoritma<br>
-Dari gambar diatas, terlihat bahwa model Random forest pada data train memiliki nilai error yang sangat kecil tetapi pada data test memiliki nilai yang tinggi yang mengalami data test overfitting. dibanding dengan model KNN dan SVM memiliki nilai error pada data train dan data test yang tinggi dan untuk model boosting relatif seimbang pada data train dan data test. sehingga model Random Forest yang akan kita pilih sebagai model terbaik untuk melakukan prediksi hasil nilai skor ujian membaca pada siswa.
+Dari gambar diatas, terlihat bahwa model Random forest pada data train dan test memiliki nilai error yang sangat kecil. dibanding dengan model KNN dan SVM memiliki nilai error pada data train dan data test yang lumayan tinggi dan untuk model boosting memiliki nilai eror yang tinggi pada data train dan data test memiliki nilai eror yang lebih sedikit dibanding dengan data train. sehingga model Random Forest yang akan kita pilih sebagai model terbaik untuk melakukan prediksi hasil nilai skor ujian membaca pada siswa.
 
 untuk mengujinya, penulis membuat prediksi menggunakan beberapa harga dari data test.
 
 ![alt text](./asset/harga.png)<br>
 Gambar 24. Hasil prediksi MSE<br>
-Pada gambar diatas adalah hasil prediksi *'reading score'* dari ke empat algoritma yaitu KNN, Random Forest (RF), Boosting, dan SVM terhadap dua sampel data. Nilai asli (y_true) dibandingkan dengan hasil prediksi dari masing-masing model.
+Pada gambar diatas adalah hasil prediksi *average score* dari ke empat algoritma yaitu KNN, Random Forest (RF), Boosting, dan SVM terhadap satu sampel data. Nilai asli (y_true) dibandingkan dengan hasil prediksi dari masing-masing model.
 
-Terlihat bahwa pada sampel pertama (index 68), keempat model memberikan prediksi yang sangat dekat dengan nilai aktual (58), dan Boosting memberikan hasil yang paling mendekati (58.2018). Sedangkan pada sampel kedua (index 214), keempat model cenderung underpredict, dan SVM memberikan hasil prediksi terdekat dengan nilai sebenarnya (91).
+Terlihat bahwa pada contoh sample (index 81), Model yang paling mendekati nilai aktual adalah **Random Forest (RF)** dengan prediksi 47.40, selisih hanya sekitar 0.41 dari nilai sebenarnya, dibanding dengan model lainnya yaitu **KNN memiliki nilai eror 47.73**, **SVM memiliki nilai error 48.90** dan **Boosting memiliki nilai error 49.46**.
 
-Berdasarkan hasil prediksi pada dua sampel, terlihat bahwa model Random Forest (RF) menghasilkan nilai prediksi MSE terkecil sebesar 444.87, diikuti oleh SVM dengan nilai MSE sebesar 486.92, lalu KNN sebesar 616.01, dan Boosting menghasilkan MSE tertinggi sebesar 761.55.
+Berdasarkan hasil prediksi pada sampel diatas, terlihat bahwa model **Random Forest (RF)** menghasilkan nilai prediksi MSE terkecil sebesar 47.40, diikuti oleh KNN dengan nilai prediksi sebesar 47.73, lalu SVM dengan nilai prediksi sebesar 48.90, dan Boosting menghasilkan MSE tertinggi sebesar 49.46.
 
-Hal ini menunjukkan bahwa model RF lebih akurat dibandingkan SVM, Boosting maupun KNN dalam memprediksi nilai target.
+Hal ini menunjukkan bahwa model **Random Forest** lebih akurat dibandingkan SVM, Boosting maupun KNN dalam memprediksi nilai target.
 
 ## Kesimpulan 
 Dapat dilihat dari empat model algoritma yang diuji, yaitu KNN, Random Forest, Boosting, dan SVM, bahwa dari hasil perbandingan prediksi serta visualisasi error pada data train dan test, masing-masing model menunjukkan performa yang bervariasi.
 
-Berdasarkan grafik perbandingan nilai error (MSE) pada data test, *model Boosting* **memiliki nilai error yang paling kecil**, menandakan bahwa model ini paling stabil dan memiliki kemampuan generalisasi yang baik. Kemudian, *model KNN* **memiliki nilai error yang sedikit lebih tinggi** dibandingkan Boosting. Sementara itu, *model Random Forest* **memiliki nilai error lebih tinggi lagi, menunjukkan adanya overfitting karena selisih yang signifikan antara error data train dan test.**
+Berdasarkan grafik perbandingan nilai error (MSE) pada data test, *model Boosting* **memiliki prediksi yang paling jauh dari nilai aktual**, menandakan bahwa model ini cenderung overestimasi. Kemudian, *model KNN* **memiliki hasil prediksi yang juga dekat dengan nilai aktual,** dibanding Boosting. Sementara itu, *model Random Forest* **memiliki nilai error lebih sedikit pada data train dan test.**
 
-Sedangkan model SVM menunjukkan nilai error yang paling tinggi di antara keempat model, baik pada data train maupun test, yang mengindikasikan bahwa SVM cenderung underfitting pada data ini.
+Sedangkan model *SVM* menunjukkan **nilai error yang paling tinggi** di antara keempat model, baik pada data train maupun test, yang mengindikasikan bahwa SVM cenderung underfitting pada data ini.
 
 ## Referensi 
-https://www.ijraset.com/research-paper/ensemble-models-for-analyzing-students-key-performance-factors Regression and Ensemble Models for Analyzing Students' Key Performance Factors.<br>
 [1] P. Cortez and A. Silva, “Using Data Mining to Predict Secondary School Student Performance,” EUROSIS, 2008.
