@@ -211,7 +211,7 @@ Gambar 20. Kolom **Average Score**<br>
 | 4     | 0.650912   | 0.596682       | 0.443121       | False         | True        | False              | True                | False                                         | False                                      | False                               | False                                    | True                          | False                           | False                       | True                  | False               | False               | True                | False               | False               |
 <br>
 Tabel 2. One-Hot-Encoding pada data kategori.<br>
-Pada tabel diatas merupakan hasil one hot encoding yang kita lakukan pada data kategori yang menghasilkan **False dan True** pada semua data bertipe kategori. menggunakan one-hot-encoding dengan teknik **.get_dummies()<br>**
+Pada tabel diatas merupakan hasil one hot encoding yang kita lakukan pada data kategori yang menghasilkan False dan True pada semua data bertipe kategori. menggunakan one-hot-encoding dengan teknik .get_dummies()<br>
 
 #### Data Splitting
 
