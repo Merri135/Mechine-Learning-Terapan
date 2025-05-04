@@ -193,13 +193,13 @@ dari hasil visualisasi yang kita ketahui bahwa fitur 'math score' dan 'writing s
 - melakukan data splitting menjadi data latih dan data test.<br>
 - melakukan fungsi 'Standarisasi' pada data numerik<br>
 
-**Membuat Kolom *Average Score***<br>
+#### Membuat Kolom *Average Score 
 Kita akan melakukan pembuatan kolom baru yaitu *average score* yang bertujuan untuk menjadikan kolom *average score* sebagai taget untuk melatih model dan mendapatkan evaluasi dari model yang telah kita latih. penulis dalam membuat kolom *average score* dengan cara membuat rata-rata pada setiap kolom numerik yaitu *math score, writing score dan reading score* menggunakan fungsi **.mean(axis=1)**. berikut hasilnya :
 ![alt text](./asset/average.png)<br>
 Gambar 20. Kolom **Average Score**<br>
 
 
-**One-Hot -Encoding pada data numerik<br>**
+#### One-Hot -Encoding pada data numerik
 
 | index | math score | reading score | writing score | gender_female | gender_male | lunch_free_reduced | lunch_free_standard | parental level of education_associate's degree | parental level of education_bachelor's degree | parental level of education_high school | parental level of education_master's degree | parental level of education_some college | parental level of education_some high school | test preparation course_completed | test preparation course_none | race/ethnicity_groupA | race/ethnicity_groupB | race/ethnicity_groupC | race/ethnicity_groupD | race/ethnicity_groupE |
 |:-----:|:----------:|:-------------:|:-------------:|:-------------:|:-----------:|:------------------:|:-------------------:|:----------------------------------------------:|:--------------------------------------------:|:--------------------------------------:|:-------------------------------------------:|:--------------------------------:|:----------------------------------:|:-----------------------------:|:-----------------------:|:-------------------:|:-------------------:|:-------------------:|:-------------------:|:-------------------:|
@@ -212,7 +212,7 @@ Gambar 20. Kolom **Average Score**<br>
 Tabel 2. One-Hot-Encoding pada data kategori.<br>
 Pada tabel diatas merupakan hasil one hot encoding yang kita lakukan pada data kategori yang menghasilkan *False* dan *True* pada semua data bertipe kategori. menggunakan one-hot-encoding dengan teknik **.get_dummies()**<br>
 
-**Data Splitting**
+#### Data Splitting
 
 Pada proyek ini kita akan menggunakan data split untuk membagi fitur target yang akan kita latih selanjutnya. untuk melakukan itu, perlu mengimport library data split yaitu *train_test_split*, kemudian membagi variabel menjadi 2 buah yaitu X yang berfungsi untuk menghapus kolom *reading score* dan y untuk menampilkan kolom *reading score* lalu dibagi menjadi 4 variabel baru yaitu *X_train, X_test,y_train,y_test menggunakan library *train_test_split* dengan parameter seperti ini :
 - X berfungsi untuk menghapus kolom *reading score*
@@ -225,7 +225,7 @@ setelah melakukan pembagian data pada data splitting, kita bisa mengetahui berap
 ![alt text](./asset/sampel.png)<br>
 Gambar 21. hasil jumlah sample<br>
 
-**Standarisasi**
+#### Standarisasi
 
 Proses Scaling dan Standarisasi membantu untuk membuat fitur data menjadi bentuk yang lebih mudah diolah oleh algoritma. standarisasi adalah teknik tansformasi yang digunakan dalam tahap persiapan pemodelan dengan menggunakan teknik *StandarScaler* dari library *Scikitlearn*.
 
