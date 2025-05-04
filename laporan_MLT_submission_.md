@@ -312,9 +312,9 @@ Pada tabel diatas merupakan hasil MSE yang telah kita lakukan pada data train da
 ![alt text](./asset/model.png)<br>
 
 Gambar 23. Visualisasi hasil MSE dari ke 4 algoritma<br>
-Dari gambar diatas, terlihat bahwa model Random forest pada data train dan test memiliki nilai error yang sangat kecil. dibanding dengan model KNN dan SVM memiliki nilai error pada data train dan data test yang lumayan tinggi dan untuk model boosting memiliki nilai eror yang tinggi pada data train dan data test memiliki nilai eror yang lebih sedikit dibanding dengan data train. sehingga model Random Forest yang akan kita pilih sebagai model terbaik untuk melakukan prediksi hasil nilai skor ujian membaca pada siswa.
+Dari gambar diatas, terlihat bahwa model Random forest pada data train dan test memiliki nilai error yang sangat kecil. dibanding dengan model KNN dan SVM memiliki nilai error pada data train dan data test yang lumayan tinggi dan untuk model boosting memiliki nilai eror yang tinggi pada data train dan data test memiliki nilai eror yang lebih sedikit dibanding dengan data train. sehingga model Random Forest yang akan kita pilih sebagai model terbaik untuk melakukan prediksi hasil setiap nilai akademik skor ujian pada siswa.
 
-untuk mengujinya, penulis membuat prediksi menggunakan beberapa harga dari data test.
+untuk mengujinya, penulis membuat prediksi menggunakan beberapa hasil dari data test.
 
 ![alt text](./asset/harga.png)<br>
 Gambar 24. Hasil prediksi MSE<br>
