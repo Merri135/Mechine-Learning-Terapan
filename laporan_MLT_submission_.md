@@ -210,7 +210,7 @@ Gambar 20. Kolom **Average Score**<br>
 | 4     | 0.650912   | 0.596682       | 0.443121       | False         | True        | False              | True                | False                                         | False                                      | False                               | False                                    | True                          | False                           | False                       | True                  | False               | False               | True                | False               | False               |
 <br>
 Tabel 2. One-Hot-Encoding pada data kategori.<br>
-Pada tabel diatas merupakan hasil one hot encoding yang kita lakukan pada data kategori yang menghasilkan *False* dan *True* pada semua data bertipe kategori. menggunakan one-hot-encoding dengan teknik **.get_dummies()**
+Pada tabel diatas merupakan hasil one hot encoding yang kita lakukan pada data kategori yang menghasilkan *False* dan *True* pada semua data bertipe kategori. menggunakan one-hot-encoding dengan teknik **.get_dummies()**<br>
 
 **Data Splitting**
 
@@ -225,11 +225,14 @@ setelah melakukan pembagian data pada data splitting, kita bisa mengetahui berap
 ![alt text](./asset/sampel.png)<br>
 Gambar 21. hasil jumlah sample<br>
 
-**Standarisasi<br>**
+**Standarisasi**
+
 Proses Scaling dan Standarisasi membantu untuk membuat fitur data menjadi bentuk yang lebih mudah diolah oleh algoritma. standarisasi adalah teknik tansformasi yang digunakan dalam tahap persiapan pemodelan dengan menggunakan teknik *StandarScaler* dari library *Scikitlearn*.
 
 StandarScaler melakukan proses standarisasi fitur dengan mengurangkan mean (nilai rata-rata) setelah itu membaginya dengan standar deviasi, standarsclaer menghasilkan distribusi dengan standar deviasi ialah 1 dan mean ialah 0. ini berfungsi untuk menghindari kebocoran informasi pda data uji.
+
 ## Modeling
+
 Penulis menerapakan 4 algoritma model mechine learning yang berbeda ialah :
 1. K-Nearest Neighbors (KNN)<br>
 2. Random Forest<br>
