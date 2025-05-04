@@ -144,7 +144,7 @@ Pada gambar 13 merupakan hasil visualisasi yang kita lakukan, maka dapat kita li
   ![alt text](./asset/Figure_11.png)<br>
   Gambar 14. Hasil visualisasi kolom **lunch**.<br>
   Pada gambar 14, dapat kita lihat bahwa jenis makan siang yang lebih tinggi ialah *standar* daripada *free/recuded* yang lebih rendah.
-  - Kategori gender<br>
+- Kategori gender<br>
   ![alt text](./asset/Figure_12.png)<br>
   Gambar 15. Hasil Visualisasi kolom **gender**.<br>
   Pada gambar 15 merupakan hasil dari visualisasi yang dilakukan, dapat kita lihat bahwa jenis kelamin female lebih tinggi dari jenis kelamin male.
