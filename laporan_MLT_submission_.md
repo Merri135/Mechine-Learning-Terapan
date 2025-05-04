@@ -193,7 +193,7 @@ dari hasil visualisasi yang kita ketahui bahwa fitur 'math score' dan 'writing s
 - melakukan data splitting menjadi data latih dan data test.<br>
 - melakukan fungsi 'Standarisasi' pada data numerik<br>
 
-#### Membuat Kolom *Average Score 
+#### Membuat Kolom Average Score 
 Kita akan melakukan pembuatan kolom baru yaitu *average score* yang bertujuan untuk menjadikan kolom *average score* sebagai taget untuk melatih model dan mendapatkan evaluasi dari model yang telah kita latih. penulis dalam membuat kolom *average score* dengan cara membuat rata-rata pada setiap kolom numerik yaitu *math score, writing score dan reading score* menggunakan fungsi **.mean(axis=1)**. berikut hasilnya :
 ![alt text](./asset/average.png)<br>
 Gambar 20. Kolom **Average Score**<br>
