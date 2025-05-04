@@ -211,13 +211,13 @@ Gambar 20. Kolom **Average Score**<br>
 | 4     | 0.650912   | 0.596682       | 0.443121       | False         | True        | False              | True                | False                                         | False                                      | False                               | False                                    | True                          | False                           | False                       | True                  | False               | False               | True                | False               | False               |
 <br>
 Tabel 2. One-Hot-Encoding pada data kategori.<br>
-Pada tabel diatas merupakan hasil one hot encoding yang kita lakukan pada data kategori yang menghasilkan *False* dan *True* pada semua data bertipe kategori. menggunakan one-hot-encoding dengan teknik **.get_dummies()**<br>
+Pada tabel diatas merupakan hasil one hot encoding yang kita lakukan pada data kategori yang menghasilkan **False dan True** pada semua data bertipe kategori. menggunakan one-hot-encoding dengan teknik **.get_dummies()<br>**
 
 #### Data Splitting
 
-Pada proyek ini kita akan menggunakan data split untuk membagi fitur target yang akan kita latih selanjutnya. untuk melakukan itu, perlu mengimport library data split yaitu *train_test_split*, kemudian membagi variabel menjadi 2 buah yaitu X yang berfungsi untuk menghapus kolom *reading score* dan y untuk menampilkan kolom *reading score* lalu dibagi menjadi 4 variabel baru yaitu *X_train, X_test,y_train,y_test menggunakan library *train_test_split* dengan parameter seperti ini :
-- X berfungsi untuk menghapus kolom *reading score*
-- y berfungsi untuk menampilkan target yaitu kolom *reading score*
+Pada proyek ini kita akan menggunakan data split untuk membagi fitur target yang akan kita latih selanjutnya. untuk melakukan itu, perlu mengimport library data split yaitu *train_test_split*, kemudian membagi variabel menjadi 2 buah yaitu X yang berfungsi untuk menghapus kolom *average score* dan y untuk menampilkan kolom *average score* lalu dibagi menjadi 4 variabel baru yaitu *X_train, X_test,y_train,y_test menggunakan library *train_test_split* dengan parameter seperti ini :
+- X berfungsi untuk menghapus kolom *average score*
+- y berfungsi untuk menampilkan target yaitu kolom *average score*
 - test_size adalah ukuran pembagian dataset yang akan kita lakukan, dengan ketentuan 80% untuk data training dan 20% data testing.
 - random_state digunakan untuk mengontrol random numer generator yang akan digunakan, maka penulis menggunakan **random_state=42**.
 
