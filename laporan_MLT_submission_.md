@@ -171,6 +171,16 @@ Pada gambar 17 merupakan hasil visualisasi korelasi semua *mata pelajaran* pada 
 - dari bar chart *gender* yang kita ketahui bahwa terdapat perbedaan rata-rata nilai antara siswa perempuan dan laki-laki dalam mata pelajaran membaca dan menulis. **Siswa perempuan** cenderung memiliki rata-rata skor yang **lebih tinggi** dalam kedua mata pelajaran ini dibandingkan **siswa laki-laki** dan kita ketahui bahwa **siswa perempuan** menunjukkan keunggulan yang lebih jelas dalam kemampuan verbal **membaca dan menulis**, sementara performa dalam **matematika** hampir setara dengan **siswa laki-laki.**
 
 
+**Visualisasi korelasi nilai siswa yang lulus dan gagal pada setiap akademik<br>**
+![alt text](./asset/math.png)<br>
+![alt text](./asset/writing.png)<br>
+![alt text](./asset/reading.png)<br>
+Gambar 18. Korelasi nilai siswa yang lulus dan gagal.<br>
+Berdasarkan gambar diatas merupakan hasil visualisasi untuk dapat melihat nilai siswa yang lulus dan gagal berdasarkan setiap akademik. dimana yang kita lihat bahwa ada perbedaan yang tidak merata pada setiap mata pelajaran yang diikuti oleh siswa, sebagai berikut :
+- pada bar char *math score* yang dapat kita ketahui adalah bahwa siswa yang dinyatakan lulus dalam ujian matematika lebih tinggi memiliki persentase 87,6% dibanding yang gagal memiliki persentase 12,4%.
+- pada bar char *writing score* yang daat kita ketahui ialah bahwa siswa lebih banyak yang lulus pada ujian mata pelajaran menulis yang memiliki persentase 89,7% dibanding dengan siswa yang gagal memiliki persentase 10,3%.
+- pada bar char *reading score* yang kita ketahui adalah lebih banyak siswa yang lulus dalam ujian mata pelajaran membaca yang memiliki persentase 92,1% dibanding dengan siswa yang gagal memiliki persentase 7,9%. 
+
 **Korelasi matriks fitur numerik.<br>**
 ![alt text](./asset/matrik.png)<br>
 Gambar 19. Korelasi matrik fitur numerik.<br>
@@ -178,9 +188,16 @@ Pada gambar diatas merupakan hasil korelasi matrik pada fitur numerik, yang dima
 dari hasil visualisasi yang kita ketahui bahwa fitur 'math score' dan 'writing score' keduanya memiliki hubungan yang positif dengan 'reading score'. jadi, fitur 'reading score' berkorelasi tinggi dengan kedua fitur tersebut.
 ## Data Preparation
 ### Tahap Preparation
+- membuat kolom baru yaitu **Average Score** untuk dijadikan taget.
 - mengubah data kategori pada dataset menjadi 'true' dan 'false' dengan menggunakan One-Hot-Encoding.<br>
 - melakukan data splitting menjadi data latih dan data test.<br>
 - melakukan fungsi 'Standarisasi' pada data numerik<br>
+
+**Membuat Kolom *Average Score***<br>
+Kita akan melakukan pembuatan kolom baru yaitu *average score* yang bertujuan untuk menjadikan kolom *average score* sebagai taget untuk melatih model dan mendapatkan evaluasi dari model yang telah kita latih. penulis dalam membuat kolom *average score* dengan cara membuat rata-rata pada setiap kolom numerik yaitu *math score, writing score dan reading score* menggunakan fungsi **.mean(axis=1)**. berikut hasilnya :
+![alt text](./asset/average.png)<br>
+Gambar 20. Kolom **Average Score**<br>
+
 
 **One-Hot -Encoding pada data numerik<br>**
 
@@ -205,7 +222,7 @@ Pada proyek ini kita akan menggunakan data split untuk membagi fitur target yang
 setelah melakukan pembagian data pada data splitting, kita bisa mengetahui berapa banyak jumlah sampel pada setiap data yang telah kita bagikan sebelumnya, untuk menampilkan jumlah sampel pada setiap data yang dibagi ialah menggunakan fungsi *len(X_train) dan len(X_test)*. maka berikut hasil split dataset.
 
 ![alt text](./asset/sampel.png)<br>
-Gambar 20. hasil jumlah sample<br>
+Gambar 21. hasil jumlah sample<br>
 
 **Standarisasi<br>**
 Proses Scaling dan Standarisasi membantu untuk membuat fitur data menjadi bentuk yang lebih mudah diolah oleh algoritma. standarisasi adalah teknik tansformasi yang digunakan dalam tahap persiapan pemodelan dengan menggunakan teknik *StandarScaler* dari library *Scikitlearn*.
@@ -270,7 +287,7 @@ Pada proyek ini, penulis menggunakan **SVR (Support Vector Regresi)**. Cara kerj
 ## Evaluation
 Pada proyek ini menggunakan model mechine learning bertipe **Regresi**. Metrik yang digunakan untuk melakukan Evaluasi model ialah MSE (Mean Squared Error) yang dimana bertujuan untuk mengukur rata-rata kuadrat selisih antara prediksi dan nilai aktual. berikut rumus MSE :<br>
 ![alt text](./asset/mse.png)<br>
-Gambar 21. Rumus MSE<br>
+Gambar 22. Rumus MSE<br>
 keterangan :<br>
 n = jumlah dataset<br>
 yi = nilai sebenarnya<br>
@@ -288,13 +305,13 @@ Pada tabel diatas merupakan hasil MSE yang telah kita lakukan pada data train da
 
 ![alt text](./asset/model.png)<br>
 
-Gambar 22. Visualisasi hasil MSE dari ke 4 algoritma<br>
+Gambar 23. Visualisasi hasil MSE dari ke 4 algoritma<br>
 Dari gambar diatas, terlihat bahwa model Random forest pada data train memiliki nilai error yang sangat kecil tetapi pada data test memiliki nilai yang tinggi yang mengalami data test overfitting. dibanding dengan model KNN dan SVM memiliki nilai error pada data train dan data test yang tinggi dan untuk model boosting relatif seimbang pada data train dan data test. sehingga model Random Forest yang akan kita pilih sebagai model terbaik untuk melakukan prediksi hasil nilai skor ujian membaca pada siswa.
 
 untuk mengujinya, penulis membuat prediksi menggunakan beberapa harga dari data test.
 
 ![alt text](./asset/harga.png)<br>
-Gambar 23. Hasil prediksi MSE<br>
+Gambar 24. Hasil prediksi MSE<br>
 Pada gambar diatas adalah hasil prediksi *'reading score'* dari ke empat algoritma yaitu KNN, Random Forest (RF), Boosting, dan SVM terhadap dua sampel data. Nilai asli (y_true) dibandingkan dengan hasil prediksi dari masing-masing model.
 
 Terlihat bahwa pada sampel pertama (index 68), keempat model memberikan prediksi yang sangat dekat dengan nilai aktual (58), dan Boosting memberikan hasil yang paling mendekati (58.2018). Sedangkan pada sampel kedua (index 214), keempat model cenderung underpredict, dan SVM memberikan hasil prediksi terdekat dengan nilai sebenarnya (91).
