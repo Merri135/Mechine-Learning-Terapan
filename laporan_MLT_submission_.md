@@ -137,7 +137,7 @@ Dari gambar 11 merupakan hasil dari visualisasi yang kita lakukan, maka dapat ki
 Gambar 12. Hasil visualisasi kolom **race/ethnicity**.<br>
 Pada gambar 12, dapat kita lihat bahwa kelompok etnis yang lebih tinggi ialah *group c* sedangkan *group B* cenderung signifikan, dan kelompok etnis yang paling rendah ialah *group A*.
 - Kategori test preparation course<br>
-![alt text](./asset/Figure_9.png)<r>
+![alt text](./asset/Figure_9.png)<br>
 Gambar 13. Hasil visualisasi kolom **test preparation course**<br>
 Pada gambar 13 merupakan hasil visualisasi yang kita lakukan, maka dapat kita lihat bahwa jenis ujian yang paling tinggi ialah *none* dibandingkan jenis ujian *completed* memiliki nilai yang paling rendah.
 - Kategori lunch<br>
@@ -176,10 +176,11 @@ Pada gambar 17 merupakan hasil visualisasi korelasi semua *mata pelajaran* pada 
 ![alt text](./asset/writing.png)<br>
 ![alt text](./asset/reading.png)<br>
 Gambar 18. Korelasi nilai siswa yang lulus dan gagal.<br>
-Berdasarkan gambar diatas merupakan hasil visualisasi untuk dapat melihat nilai siswa yang lulus dan gagal berdasarkan setiap akademik. dimana yang kita lihat bahwa ada perbedaan yang tidak merata pada setiap mata pelajaran yang diikuti oleh siswa, sebagai berikut :
+Berdasarkan gambar diatas merupakan hasil visualisasi untuk dapat melihat nilai siswa yang lulus dan gagal berdasarkan setiap akademik. dimana yang kita lihat bahwa ada perbedaan yang sangat signifikan pada setiap mata pelajaran yang diikuti oleh siswa, sebagai berikut :
 - pada bar char *math score* yang dapat kita ketahui adalah bahwa siswa yang dinyatakan lulus dalam ujian matematika lebih tinggi memiliki persentase 87,6% dibanding yang gagal memiliki persentase 12,4%.
-- pada bar char *writing score* yang daat kita ketahui ialah bahwa siswa lebih banyak yang lulus pada ujian mata pelajaran menulis yang memiliki persentase 89,7% dibanding dengan siswa yang gagal memiliki persentase 10,3%.
-- pada bar char *reading score* yang kita ketahui adalah lebih banyak siswa yang lulus dalam ujian mata pelajaran membaca yang memiliki persentase 92,1% dibanding dengan siswa yang gagal memiliki persentase 7,9%. 
+- pada bar char *writing score* yang dapat kita ketahui ialah bahwa siswa lebih banyak yang lulus pada ujian mata pelajaran menulis yang memiliki persentase 89,7% dibanding dengan siswa yang gagal memiliki persentase 10,3%.
+- pada bar char *reading score* yang kita ketahui adalah lebih banyak siswa yang lulus dalam ujian mata pelajaran membaca yang memiliki persentase 92,1% dibanding dengan siswa yang gagal memiliki persentase 7,9%.
+- **Kesimpulannya** Mata pelajaran dengan nilai akademik yang paling tinggi yaitu mata pelajaran *reading score* yang mencapai **persentase 92,1%** dan persentase kegagalan lebih rendah dari mata pelajaran lainnya.
 
 **Korelasi matriks fitur numerik.<br>**
 ![alt text](./asset/matrik.png)<br>
