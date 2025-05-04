@@ -4,11 +4,19 @@
 
 ###  Latar Belakang 
 
-Pendidikan merupakan salah satu pilar utama dalam pembangunan suatu bangsa. Kualitas pendidikan tidak hanya ditentukan oleh kurikulum dan fasilitas, tetapi juga oleh berbagai faktor individu dan sosial yang memengaruhi hasil belajar siswa. Salah satu cara untuk mengevaluasi hasil belajar siswa adalah melalui performa mereka dalam ujian akademik.
+Pendidikan merupakan salah satu faktor kunci utama dalam pembangunan suatu negara karena berperan penting dalam meningkatkan kualitas sumber daya manusia. oleh karena itu, pemahaman terhadap faktor-faktor yang memengaruhi kinerja akademik siswa sangat penting untuk meningkatkan mutu pendidikan. seiring berkembangnya teknologi dan ketersediaan data, analisis data pendidikan menjadi pendekatan yang semakin populer untuk memahami pola-pola yang memengaruhi performa belajar siswa.
+
+Salah satu dataset yang dapat penulis analisis ialah *Student Perfomance Dataset* yang mencakup berbagai variabel seperti status sosial,  ekonomi, tingkat pendidikan orang tua dan jenis makanan yang dikelola. Melalui analisis dataset ini, penulis dapat mengindefikasi faktor-faktor utama yang berkorelasi dengan performa siswa di sekolah. Pemahaman ini dapat membantu guru, orang tua dan pembuat kebijakan dalam merancang starategi pembelajaran yang lebih efektif dan inklusif.
+
+Masalah yang diangkat dalam proyek ini ialah **Bagaimana berbagai faktor sosial,pendidikan dan pola makan siswa memengaruhi hasil belajar siswa.** Masalah ini penting untuk diselesaikan karena ketimpangan dalam hasil pendidikan dapat berdampak pada kesempatan masa depan siswa, terutama bagi siswa yang kurang mendapat fasilitas seperti siswa pada umumnya.
+
+Beberapa penelitian juga telah menunjukkan bahwa analisis data pendidikan dapat mengungkapkan pola yang tidak dampak secara kasat mata. Menurut *Cortex dan Silva* (2008), yang menggunakan metode data mining pada data siswa di portugal, ditemukan bahwa faktor seperti komsumsi alkohol, waktu belajar dan hubungan keluarga memiliki pengaruh signifikan terhadap performa akademik siswa[1].
+
+Dengan hal itu, penulis bertujuan untuk melakukan analisis lebih lanjut terhadap dataset *Perfomance Student* untuk mendapatkan insight yang berguna dalam meningkatkan kualitas pendidikan.
   
 ## Business Understanding
 
-Dalam dunia pendidikan, memahami faktor-faktor yang memengaruhi performa siswa sangat krusial untuk meningkatkan kualitas pembelajaran dan mencegah ketimpangan hasil akademik. Melalui pendekatan analisis data dan machine learning, kita dapat mengklarifikasi permasalahan, merumuskan tujuan, serta menyusun solusi prediktif untuk membantu pengambilan keputusan di bidang pendidikan.
+Dalam dunia pendidikan, memahami faktor-faktor yang memengaruhi performa siswa sangat krusial untuk meningkatkan kualitas pembelajaran dan mencegah ketimpangan hasil akademik. Melalui pendekatan analisis data dan machine learning, penulis dapat mengklarifikasi permasalahan, merumuskan tujuan, serta menyusun solusi prediktif untuk membantu pengambilan keputusan di bidang pendidikan.
 
 ### Problem Statements
 Berdasarkan latar belakang diatas, berikut batasan masalah yang akan diselesaikan dalam proyek ini :
@@ -20,7 +28,7 @@ Berdasarkan latar belakang diatas, berikut batasan masalah yang akan diselesaika
 
 Menjawab batasan masalah yang telah dirangkum dan akan menjawab pertanyaan-pertanyaan diatas, berikut tujuan masalahnya :
 - Kita perlu untuk menganalisis faktor yang berpengaruh pada nilai skor siswa.
-- Kita perlu untuk melakukan visualisasi untuk melihat persentase siswa yang lulus dan gagal berdasarkan akademik
+- Kita perlu untuk melakukan visualisasi untuk melihat persentase siswa yang lulus dan gagal berdasarkan akademik.
 - Kita perlu untuk membangun model prediksi performa siswa menggunakan ke empat algoritma yaitu KNN,RF,SVM dan BOOSTING.
 
 ### Solution Statment
@@ -78,12 +86,12 @@ dari output pada gambar diatas, maka dilihat bahwa :
 #### Menampilkan data statistik dataset.
 Pada proyek ini, menggunakan perintah .describe() untuk menampilkan dan mengetahui statistik dasar dari kolom **math score, reading score, writing score** seperti percentile, mean, standar deviasi, jumlah data, min dan max. maka berikut tampilannya :
 
-![alt text](./asset/describe.png)
+![alt text](./asset/describe.png)<br>
 
 gambar 3. keluaran statistik pada dataset insu_df menggunakan fungsi .describe(). 
 
 #### Menampilkan missing value dan duplikat data pada dataset.
-Pada proyek ini, untuk mengetahui data memiliki missing value dan duplikat data, maka menggunakan perintah fungsi .insnull() dan .duplicated() pada dataset insu_df, setelah melakukan perintah tersebut, maka akan menampilkan kolom yang memiliki missing value dan jumlah duplikat. maka beikut tampilannya :
+Pada proyek ini, untuk mengetahui data memiliki missing value dan duplikat data, maka menggunakan perintah fungsi .insnull() dan .duplicated() pada dataset insu_df, setelah melakukan perintah tersebut, maka akan menampilkan kolom yang memiliki missing value dan jumlah duplikat. maka berikut tampilannya :
 
 ![alt text](./asset/missing.png)<br>
 Gambar 4. tampilan missing value.
@@ -120,26 +128,26 @@ Gambar 10. Hasil visualisasi chart bar **reading score**<br>
   Pada gambar 10 menampilkan hasil visualisasi rading score yang dapat kita lihat bahwa sebagian siswa mendapatkan nilai skor antara 60-80 serta nilai yang sangat rendah antar 40 dan tertinggi antara 90 tetapi jarang diperoleh.
 
 **Visualisasi Kategori Fitur**
-- Kategori gender<br>
-  ![alt text](./asset/Figure_12.png)<br>
-  Gambar 11. Hasil Visualisasi kolom **gender**.<br>
-  Pada gambar 11 merupakan hasil dari visualisasi yang dilakukan, dapat kita lihat bahwa jenis kelamin female lebih tinggi dari jenis kelamin male.
-- Kategori lunch<br>
-  ![alt text](./asset/Figure_11.png)<br>
-  Gambar 12. Hasil visualisasi kolom **lunch**.<br>
-  Pada gambar 12, dapat kita lihat bahwa jenis makan siang yang lebih tinggi ialah *standar* daripada *free/recuded* yang lebih rendah.
 - Kategori Parental level of education
   ![alt text](./asset/Figure_7.png)<br>
-Gambar 13. Hasil visualisasi kolom **parental level of education**.<br>
-Dari gambar 13 merupakan hasil dari visualisasi yang kita lakukan, maka dapat kita lihat bahwa tingkat pendidikan *some college* lebih tinggi dari data lainnya sedangkan yang terendah ialah tingkat pendidikan *master degree*.
+Gambar 11. Hasil visualisasi kolom **parental level of education**.<br>
+Dari gambar 11 merupakan hasil dari visualisasi yang kita lakukan, maka dapat kita lihat bahwa tingkat pendidikan *some college* lebih tinggi dari data lainnya sedangkan yang terendah ialah tingkat pendidikan *master degree*.
 -  Kategori race/ethnicity<br>
 ![alt text](./asset/Figure_8.png)<br>
-Gambar 14. Hasil visualisasi kolom **race/ethnicity**.<br>
-Pada gambar 14, dapat kita lihat bahwa kelompok etnis yang lebih tinggi ialah *group c* sedangkan *group B* cenderung signifikan, dan kelompok etnis yang paling rendah ialah *group A*.
+Gambar 12. Hasil visualisasi kolom **race/ethnicity**.<br>
+Pada gambar 12, dapat kita lihat bahwa kelompok etnis yang lebih tinggi ialah *group c* sedangkan *group B* cenderung signifikan, dan kelompok etnis yang paling rendah ialah *group A*.
 - Kategori test preparation course<br>
 ![alt text](./asset/Figure_9.png)<r>
-Gambar 15. Hasil visualisasi kolom **test preparation course**<br>
-Pada gambar 15 merupakan hasil visualisasi yang kita lakukan, maka dapat kita lihat bahwa jenis ujian yang paling tinggi ialah *none* dibandingkan jenis ujian *completed* memiliki nilai yang paling rendah.
+Gambar 13. Hasil visualisasi kolom **test preparation course**<br>
+Pada gambar 13 merupakan hasil visualisasi yang kita lakukan, maka dapat kita lihat bahwa jenis ujian yang paling tinggi ialah *none* dibandingkan jenis ujian *completed* memiliki nilai yang paling rendah.
+- Kategori lunch<br>
+  ![alt text](./asset/Figure_11.png)<br>
+  Gambar 14. Hasil visualisasi kolom **lunch**.<br>
+  Pada gambar 14, dapat kita lihat bahwa jenis makan siang yang lebih tinggi ialah *standar* daripada *free/recuded* yang lebih rendah.
+  - Kategori gender<br>
+  ![alt text](./asset/Figure_12.png)<br>
+  Gambar 15. Hasil Visualisasi kolom **gender**.<br>
+  Pada gambar 15 merupakan hasil dari visualisasi yang dilakukan, dapat kita lihat bahwa jenis kelamin female lebih tinggi dari jenis kelamin male.
 
 **Visualisasi History kolom numerik<br>**
 ![alt text](./asset/history.png)<br>
@@ -304,4 +312,4 @@ Sedangkan model SVM menunjukkan nilai error yang paling tinggi di antara keempat
 
 ## Referensi 
 https://www.ijraset.com/research-paper/ensemble-models-for-analyzing-students-key-performance-factors Regression and Ensemble Models for Analyzing Students' Key Performance Factors.<br>
-https://github.com/samsohail/Students-Performance-Prediction?utm_source=chatgpt.com 
+[1] P. Cortez and A. Silva, “Using Data Mining to Predict Secondary School Student Performance,” EUROSIS, 2008.
