@@ -99,11 +99,11 @@ Gambar 4. tampilan missing value.
 
 ![alt text](./asset/duplikat.png)<br>
 Gambar 5. tampilan duplikat data.<br>
-Pada gambar diatas menunjukkan bahwa dataset PerformanceStudents bersih tanpa missing value dan duplikat data.
+Pada gambar diatas menunjukkan bahwa dataset PerformanceStudents bersih tanpa missing value dan duplikat data. maka penulis tidak perlu melakukan tahap **Data Preparation** selanjutnya.
 
 ## Exploratory Data Analysis
 ### Melihat outlier pada dataset.
-Pada kasus ini, penulis akan melihat outlier dalam setiap kolom pada dataset, outlier sendiri adalah hasil pengamatan yang kemunculannya sangat jarang dan berbeda dari hasil pengamatan lainnya.penulis melakukan untuk menampilkan dan mengetahui seberapa banyak pada data yang memiliki `outlier`. dalam visualisasi diatas penulis mengetahui bahwa indikasi pada outlier terlihat berbeda secara signifikan. pada kolom `reading score` terlihat stabil sedangkan pada kolom `math score` dan `writing score` terlihat bahwa adanya **outlier yang sangat tinggi**. maka selajutnya penulis perlu untuk melakukan pada **tahap preparation.** maka berikut tampilan kolom yang outlier :
+Pada kasus ini, penulis akan melihat outlier dalam setiap kolom pada dataset, outlier sendiri adalah hasil pengamatan yang kemunculannya sangat jarang dan berbeda dari hasil pengamatan lainnya. Penulis melakukan untuk menampilkan dan mengetahui seberapa banyak pada data yang memiliki `outlier`. dalam visualisasi diatas penulis mengetahui bahwa indikasi pada outlier terlihat berbeda secara signifikan. pada kolom `reading score` terlihat stabil sedangkan pada kolom `math score` dan `writing score` terlihat bahwa adanya **outlier yang sangat tinggi**. maka selajutnya penulis perlu untuk menangani otlier pada **tahap preparation.** maka berikut tampilan kolom yang outlier :
 ![alt text](./asset/sebelum.png)<br>
 Gambar 6. tampilan sebelum menangani outlier.<br>
 
@@ -186,11 +186,15 @@ Pada gambar diatas merupakan hasil korelasi matrik pada fitur numerik, yang dima
 dari hasil visualisasi yang penulis ketahui bahwa fitur 'math score' dan 'writing score' keduanya memiliki hubungan yang positif dengan 'reading score'. jadi, fitur 'reading score' berkorelasi tinggi dengan kedua fitur tersebut.
 ## Data Preparation
 ### Tahap Preparation
+- menangani missing value dan duplikat data
 - menangani outlier
 - membuat kolom baru yaitu **Average Score** untuk dijadikan taget.
 - mengubah data kategori pada dataset menjadi 'true' dan 'false' dengan menggunakan One-Hot-Encoding.<br>
 - melakukan data splitting menjadi data latih dan data test.<br>
 - melakukan fungsi 'Standarisasi' pada data numerik<br>
+
+#### Missing value dan Duplikat data
+Pada tahap **Data Understanding** yang penulis lakukan sebelumnya bahwa **tidak ada data** missing value dan duplikat data yang akan dilakukan pada tahap **Data Preparation**.
 
 #### Menangani outlier
 Pada tahap ini, penulis melakukan untuk menangani outlier pada setiap data numerik yang telah penulis lakukan pada tahap **Data Understanding** untuk melihat perbedaan yang signifikan yang memiliki outlier. maka tahap ini, penulis melakukan rumus outlier yaitu `IQR = Q3-Q1` untuk membersihkan outlier pada data numerik. setelah menangani outlier, maka ukuran baris pada data telah berubah yaitu `988, 8` yang dapat kita lihat pada gambar dibawah ini.<br>
