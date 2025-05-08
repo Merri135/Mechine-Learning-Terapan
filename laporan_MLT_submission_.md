@@ -201,7 +201,7 @@ setelah melakukan penanganan outlier pada kolom dataset, penulis dapat melihat h
 Gambar 20. setelah melakukan pengangan outlier.<br>
 
 #### Membuat Kolom Average Score 
-Penulis akan melakukan pembuatan kolom baru yaitu *average score* yang bertujuan untuk menjadikan kolom *average score* sebagai taget untuk melatih model dan mendapatkan evaluasi dari model yang telah penulis latih. penulis dalam membuat kolom *average score* dengan cara membuat rata-rata pada setiap kolom numerik yaitu *math score, writing score dan reading score* menggunakan fungsi **.mean(axis=1)**. berikut hasilnya :
+Penulis akan melakukan pembuatan kolom baru yaitu *average score* yang bertujuan untuk menjadikan kolom *average score* sebagai taget untuk melatih model dan mendapatkan evaluasi dari model yang telah penulis latih. penulis dalam membuat kolom *average score* dengan cara membuat rata-rata pada setiap kolom numerik yaitu *math score, writing score dan reading score* menggunakan fungsi **.mean(axis=1)**. berikut hasilnya :<br>
 ![alt text](./asset/average.png)<br>
 Gambar 21. Kolom **Average Score**<br>
 
