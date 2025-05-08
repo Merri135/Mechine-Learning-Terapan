@@ -195,8 +195,8 @@ dari hasil visualisasi yang penulis ketahui bahwa fitur 'math score' dan 'writin
 #### Menangani outlier
 Pada tahap ini, penulis melakukan untuk menangani outlier pada setiap data numerik yang telah penulis lakukan pada tahap **Data Understanding** untuk melihat perbedaan yang signifikan yang memiliki outlier. maka tahap ini, penulis melakukan rumus outlier yaitu `IQR = Q3-Q1` untuk membersihkan outlier pada data numerik. setelah menangani outlier, maka ukuran baris pada data telah berubah yaitu `988, 8` yang dapat kita lihat pada gambar dibawah ini.<br>
 ![alt text](./asset/last.png)<br>
-Gambar 19. hasil setelah menangani outlier
-setelah melakukan penanganan outlier pada kolom dataset, penulis dapat melihat hasil dari penanganan outlier yang telah penulis lakukan, maka tampilan hasil penganganan outlier, sebagai berikut :<br>
+Gambar 19. hasil setelah menangani outlier<br>
+setelah melakukan penanganan outlier pada kolom dataset, penulis dapat melihat hasil dari penanganan outlier yang telah penulis lakukan, maka tampilan hasil penganganan outlier, sebagai berikut .<br>
 ![alt text](./asset/setelah.png)<br>
 Gambar 20. setelah melakukan pengangan outlier.<br>
 
