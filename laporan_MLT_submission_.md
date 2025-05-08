@@ -309,8 +309,7 @@ y_pred = nilai yang diprediksi.<br>
 | **KNN**   | 4.607423  | 6.381308  |
 | **RF**    | 0.081564 | 0.569088  |
 | **Boosting** | 6.252855	| 8.098882  |
-| **SVM**   | 11.754703 |	14.262057
-  |
+| **SVM**   | 11.754703 |	14.262057 |
 <br>
 Tabel 3. Hasil MSE.<br>
 Pada tabel diatas merupakan hasil MSE yang telah penulis lakukan pada data train dan data test. untuk lebih memudahkan penulis menampilkan plot matrik dengan bar chart.
