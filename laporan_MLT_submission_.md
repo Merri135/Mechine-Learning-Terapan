@@ -22,19 +22,20 @@ Dalam dunia pendidikan, memahami faktor-faktor yang memengaruhi performa siswa s
 Berdasarkan latar belakang diatas, berikut batasan masalah yang akan diselesaikan dalam proyek ini :
 - Apa saja faktor yang berpengaruh terhadap nilai ujian siswa?
 - Bagaimana perbandingan persentase siswa yang lulus dan gagal berdasarkan akademik
-- Bagaimana kita bisa memprediksi performa siswa pada nilai skor ujian membaca menggunakan KNN,SVM,RF dan BOOSTING?
+- Bagaimana cara untuk memprediksi performa siswa pada nilai skor ujian membaca menggunakan KNN,SVM,RF dan BOOSTING?
+
 
 ### Goals
 
 Menjawab batasan masalah yang telah dirangkum dan akan menjawab pertanyaan-pertanyaan diatas, berikut tujuan masalahnya :
-- Kita perlu untuk menganalisis faktor yang berpengaruh pada nilai skor siswa.
-- Kita perlu untuk melakukan visualisasi untuk melihat persentase siswa yang lulus dan gagal berdasarkan akademik.
-- Kita perlu untuk membangun model prediksi performa siswa menggunakan ke empat algoritma yaitu KNN,RF,SVM dan BOOSTING.
+- Penulis perlu untuk menganalisis faktor yang berpengaruh pada nilai skor siswa.
+- Penulis perlu untuk melakukan visualisasi untuk melihat persentase siswa yang lulus dan gagal berdasarkan akademik.
+- Penulis perlu untuk membangun model prediksi performa siswa menggunakan ke empat algoritma yaitu KNN,RF,SVM dan BOOSTING.
 
 ### Solution Statment
 
-untuk mencapai tujuan diatas, maka kita perlu melakukan pendekatan pemodelan yang dimana kita akan menggunakan langkah-langkah seperti ini :
-- Analisis  Deskriptif : kita akan menggunakan statistik deskriptif untuk memahami distribusi data. ini mencakup semua nilai skor akademik.
+untuk mencapai tujuan diatas, maka penulis perlu melakukan pendekatan pemodelan yang dimana penulis akan menggunakan langkah-langkah seperti ini :
+- Analisis  Deskriptif : penulis akan menggunakan statistik deskriptif untuk memahami distribusi data. ini mencakup semua nilai skor akademik.
 - Analisis korelasi : menggunakan korelasi untuk melihat hubungan antara berbagai faktor yang mempengaruhi skor nilai siswa.
 - Model Prediksi : membangun model predeksi berbasis mechine learning seperti Random Forest (RF), K-Nearest Neighbors (KNN), Boosting, Support Vector Machine (SVM) untuk menangani nilai skor ujian siswa.
 
@@ -102,12 +103,12 @@ Pada gambar diatas menunjukkan bahwa dataset PerformanceStudents bersih tanpa mi
 
 ## Exploratory Data Analysis
 ### Melihat outlier pada dataset.
-Pada kasus ini, kita akan melihat outlier dalam setiap kolom pada dataset, outlier sendiri adalah hasil pengamatan yang kemunculannya sangat jarang dan berbeda dari hasil pengamatan lainnya. maka berikut tampilan kolom yang outlier :
+Pada kasus ini, penulis akan melihat outlier dalam setiap kolom pada dataset, outlier sendiri adalah hasil pengamatan yang kemunculannya sangat jarang dan berbeda dari hasil pengamatan lainnya. maka berikut tampilan kolom yang outlier :
 ![alt text](./asset/sebelum.png)<br>
 Gambar 6. tampilan sebelum menangani outlier.<br>
-dari gambar diatas, terdapat outlier pada kolom math score,reading score dan writing score. untuk menangani outlier kita dapat menggunakan teknik IQR method. IQR adalah *Interquartile Range*. berikut rumus akan kita pakai :<br>
+dari gambar diatas, terdapat outlier pada kolom math score,reading score dan writing score. untuk menangani outlier penulis dapat menggunakan teknik IQR method. IQR adalah *Interquartile Range*. berikut rumus akan penulis pakai :<br>
 ![alt text](./asset/outlier.png)<br>
-setelah melakukan penanganan outlier pada kolom dataset, kita dapat melihat hasil dari penanganan outlier yang telah kita lakukan, maka tampilan hasil penganganan outlier, sebagai berikut :<br>
+setelah melakukan penanganan outlier pada kolom dataset, penulis dapat melihat hasil dari penanganan outlier yang telah penulis lakukan, maka tampilan hasil penganganan outlier, sebagai berikut :<br>
 ![alt text](./asset/setelah.png)<br>
 Gambar 7. setelah melakukan pengangan outlier.<br>
 
@@ -117,42 +118,42 @@ Gambar 7. setelah melakukan pengangan outlier.<br>
 - Numeric math score<br>
   ![alt text](./asset/Figure3.png)<br>
   Gambar 8. hasil visualisasi chart bar **math score**.<br>
-  Pada gambar 8 merupakan hasil visualisasi kolom **math score** yang dapat kita lihat bahwa jumlah nilai skor matematika siswa tersebar cukup merata dengan kecenderungan siswa memiliki nilai antara 60-70, distribusi tidak sepenuhnya simetris, dikarenakan ada leih sedikit siswa mendapat nilai tertinggi dan sangat rendah.
+  Pada gambar 8 merupakan hasil visualisasi kolom **math score** yang dapat penulis lihat bahwa jumlah nilai skor matematika siswa tersebar cukup merata dengan kecenderungan siswa memiliki nilai antara 60-70, distribusi tidak sepenuhnya simetris, dikarenakan ada leih sedikit siswa mendapat nilai tertinggi dan sangat rendah.
 - Numeric writing score<br>
 ![alt text](./asset/Figure4.png)<br>
 Gambar 9. Hasil Visualisasi chart bar **writing score**.<br>
-Pada gambar 9 menampilkan visualisasi writing score yang dapat kita lihat bahwasebagian besar peserta mendapatkan skor menulis di sekitar nilai 60-80, distribusi nilai skor cenderung simetris sekitar nilai 70 dan mengindikasi bahwa skor-skor secara cukup merata disekitar rata-rata.
+Pada gambar 9 menampilkan visualisasi writing score yang dapat penulis lihat bahwa sebagian besar peserta mendapatkan skor menulis di sekitar nilai 60-80, distribusi nilai skor cenderung simetris sekitar nilai 70 dan mengindikasi bahwa skor-skor secara cukup merata disekitar rata-rata.
 - Numeric reading score<br>
 ![alt text](./asset/Figure5.png)<br>
 Gambar 10. Hasil visualisasi chart bar **reading score**<br>
-  Pada gambar 10 menampilkan hasil visualisasi rading score yang dapat kita lihat bahwa sebagian siswa mendapatkan nilai skor antara 60-80 serta nilai yang sangat rendah antar 40 dan tertinggi antara 90 tetapi jarang diperoleh.
+  Pada gambar 10 menampilkan hasil visualisasi rading score yang dapat penulis lihat bahwa sebagian siswa mendapatkan nilai skor antara 60-80 serta nilai yang sangat rendah antar 40 dan tertinggi antara 90 tetapi jarang diperoleh.
 
 **Visualisasi Kategori Fitur**
 - Kategori Parental level of education
   ![alt text](./asset/Figure_7.png)<br>
 Gambar 11. Hasil visualisasi kolom **parental level of education**.<br>
-Dari gambar 11 merupakan hasil dari visualisasi yang kita lakukan, maka dapat kita lihat bahwa tingkat pendidikan *some college* lebih tinggi dari data lainnya sedangkan yang terendah ialah tingkat pendidikan *master degree*.
+Dari gambar 11 merupakan hasil dari visualisasi yang penulis lakukan, maka dapat penulis lihat bahwa tingkat pendidikan *some college* lebih tinggi dari data lainnya sedangkan yang terendah ialah tingkat pendidikan *master degree*.
 -  Kategori race/ethnicity<br>
 ![alt text](./asset/Figure_8.png)<br>
 Gambar 12. Hasil visualisasi kolom **race/ethnicity**.<br>
-Pada gambar 12, dapat kita lihat bahwa kelompok etnis yang lebih tinggi ialah *group c* sedangkan *group B* cenderung signifikan, dan kelompok etnis yang paling rendah ialah *group A*.
+Pada gambar 12, dapat penulis lihat bahwa kelompok etnis yang lebih tinggi ialah *group c* sedangkan *group B* cenderung signifikan, dan kelompok etnis yang paling rendah ialah *group A*.
 - Kategori test preparation course<br>
 ![alt text](./asset/Figure_9.png)<br>
 Gambar 13. Hasil visualisasi kolom **test preparation course**<br>
-Pada gambar 13 merupakan hasil visualisasi yang kita lakukan, maka dapat kita lihat bahwa jenis ujian yang paling tinggi ialah *none* dibandingkan jenis ujian *completed* memiliki nilai yang paling rendah.
+Pada gambar 13 merupakan hasil visualisasi yang penulis lakukan, maka dapat penulis lihat bahwa jenis ujian yang paling tinggi ialah *none* dibandingkan jenis ujian *completed* memiliki nilai yang paling rendah.
 - Kategori lunch<br>
   ![alt text](./asset/Figure_11.png)<br>
   Gambar 14. Hasil visualisasi kolom **lunch**.<br>
-  Pada gambar 14, dapat kita lihat bahwa jenis makan siang yang lebih tinggi ialah *standar* daripada *free/recuded* yang lebih rendah.
+  Pada gambar 14, dapat penulis lihat bahwa jenis makan siang yang lebih tinggi ialah *standar* daripada *free/recuded* yang lebih rendah.
 - Kategori gender<br>
   ![alt text](./asset/Figure_12.png)<br>
   Gambar 15. Hasil Visualisasi kolom **gender**.<br>
-  Pada gambar 15 merupakan hasil dari visualisasi yang dilakukan, dapat kita lihat bahwa jenis kelamin female lebih tinggi dari jenis kelamin male.
+  Pada gambar 15 merupakan hasil dari visualisasi yang dilakukan, dapat penulis lihat bahwa jenis kelamin female lebih tinggi dari jenis kelamin male.
 
 **Visualisasi History kolom numerik<br>**
 ![alt text](./asset/history.png)<br>
 Gambar 16. History kolom numerik<br>
-Dari gambar diatas, kita dapat lihat bahwa ketiga mata pelajaran memiliki distribusi mendekati normal, dapat kita lihat dari mata pelajaran *matematika* sedikit lebih *rendah* diantara 60-70, mata pelajaran *reading* cenderung lebih sedikit lebih tinggi diantara 65-75 dan mata pelajaran *writing* hampir sama dengan mata pelajaran *matematika* hanya 0.5% naik dibanding *matematika*.
+Dari gambar diatas, penulis dapat lihat bahwa ketiga mata pelajaran memiliki distribusi mendekati normal, dapat penulis lihat dari mata pelajaran *matematika* sedikit lebih *rendah* diantara 60-70, mata pelajaran *reading* cenderung lebih sedikit lebih tinggi diantara 65-75 dan mata pelajaran *writing* hampir sama dengan mata pelajaran *matematika* hanya 0.5% naik dibanding *matematika*.
 
 **Visualisasi korelasi data numerik terhadap data kategori<br>**
 
@@ -162,13 +163,13 @@ Dari gambar diatas, kita dapat lihat bahwa ketiga mata pelajaran memiliki distri
 ![alt text](./asset/lunch.png)<br>
 ![alt text](./asset/gender.png)<br>
 Gambar 17. Visualisasi korelasi data numerik pada data kategori.<br>
-Pada gambar 17 merupakan hasil visualisasi korelasi semua *mata pelajaran* pada data kategori. dimana yang kita lihat terdapat bar chart relatif sama rata, tetapi ada juga perbedaan yang signifikan yaitu :
+Pada gambar 17 merupakan hasil visualisasi korelasi semua *mata pelajaran* pada data kategori. dimana yang penulis lihat terdapat bar chart relatif sama rata, tetapi ada juga perbedaan yang signifikan yaitu :
 
-- Pada bar chart *parental level of education* yang kita lihat bahwa semakin tinggi tingkat pendidikan orang tua maka skor nilai akademik tiap siswa lebih tinggi dan semakin rendah tingkat pendidikan orangtua maka skor nilai akademik tiap siswa lebih rendah. maka jika kita menganalisa dari gambar diatas bahwa rentang nilai antar **tingkat pendidikan orang tua terlihat lebih lebar pada mata pelajaran membaca dan menulis** dibandingkan dengan **matematika.** Ini mengindikasikan bahwa tingkat pendidikan orang tua mungkin memiliki pengaruh yang lebih besar pada kemampuan membaca dan menulis siswa.
-- dari bar chart *race/ethinicity* yang kita lihat bahwa Kelompok E cenderung memiliki rata-rata nilai tertinggi secara keseluruhan dibandingkan kelompok lain, **terutama dalam mata pelajaran membaca dan menulis** dan Kelompok A cenderung memiliki rata-rata nilai terendah di antara kelompok lain dalam ketiga mata pelajaran. 
-- dari bar chart *test preparation course* yang kita lihat bahwa ada perbedaan yang relatif tidak merata, dimana siswa yang mengikuti kursus persiapan tes cenderung memiliki rata-rata nilai yang lebih tinggi secara signifikan dalam ketiga mata pelajaran *matematika, membaca, dan menulis* dibandingkan dengan siswa yang tidak mengikuti kursus. tetapi dari yang kita ketahui bahwa perbedaan rata-rata nilai antara kedua kelompok **mengikuti kursus vs. tidak mengikuti kursus** tampak **paling besar pada mata pelajaran membaca dan menulis** dibanding dengan mata pelajaran **matematika**.
-- dari bar chart *lunch* yang kita ketahui bahwa siswa yang mendapatkan **makan siang standar cenderung memiliki rata-rata nilai yang lebih tinggi** dalam ketiga mata pelajaran *matematika, membaca, dan menulis* dibandingkan dengan siswa yang mendapatkan **makan siang gratis**. walaupun begitu, perbedaan rata-rata nilai tampak paling besar pada **mata pelajaran membaca** dibanding dengan **mata pelajaran matematika dan menulis.**
-- dari bar chart *gender* yang kita ketahui bahwa terdapat perbedaan rata-rata nilai antara siswa perempuan dan laki-laki dalam mata pelajaran membaca dan menulis. **Siswa perempuan** cenderung memiliki rata-rata skor yang **lebih tinggi** dalam kedua mata pelajaran ini dibandingkan **siswa laki-laki** dan kita ketahui bahwa **siswa perempuan** menunjukkan keunggulan yang lebih jelas dalam kemampuan verbal **membaca dan menulis**, sementara performa dalam **matematika** hampir setara dengan **siswa laki-laki.**
+- Pada bar chart *parental level of education* yang penulis lihat bahwa semakin tinggi tingkat pendidikan orang tua maka skor nilai akademik tiap siswa lebih tinggi dan semakin rendah tingkat pendidikan orangtua maka skor nilai akademik tiap siswa lebih rendah. maka jika penulis menganalisa dari gambar diatas bahwa rentang nilai antar **tingkat pendidikan orang tua terlihat lebih lebar pada mata pelajaran membaca dan menulis** dibandingkan dengan **matematika.** Ini mengindikasikan bahwa tingkat pendidikan orang tua mungkin memiliki pengaruh yang lebih besar pada kemampuan membaca dan menulis siswa.
+- dari bar chart *race/ethinicity* yang penulis  lihat bahwa Kelompok E cenderung memiliki rata-rata nilai tertinggi secara keseluruhan dibandingkan kelompok lain, **terutama dalam mata pelajaran membaca dan menulis** dan Kelompok A cenderung memiliki rata-rata nilai terendah di antara kelompok lain dalam ketiga mata pelajaran. 
+- dari bar chart *test preparation course* yang penulis lihat bahwa ada perbedaan yang relatif tidak merata, dimana siswa yang mengikuti kursus persiapan tes cenderung memiliki rata-rata nilai yang lebih tinggi secara signifikan dalam ketiga mata pelajaran *matematika, membaca, dan menulis* dibandingkan dengan siswa yang tidak mengikuti kursus. tetapi dari yang penulis ketahui bahwa perbedaan rata-rata nilai antara kedua kelompok **mengikuti kursus vs. tidak mengikuti kursus** tampak **paling besar pada mata pelajaran membaca dan menulis** dibanding dengan mata pelajaran **matematika**.
+- dari bar chart *lunch* yang penulis ketahui bahwa siswa yang mendapatkan **makan siang standar cenderung memiliki rata-rata nilai yang lebih tinggi** dalam ketiga mata pelajaran *matematika, membaca, dan menulis* dibandingkan dengan siswa yang mendapatkan **makan siang gratis**. walaupun begitu, perbedaan rata-rata nilai tampak paling besar pada **mata pelajaran membaca** dibanding dengan **mata pelajaran matematika dan menulis.**
+- dari bar chart *gender* yang penulis ketahui bahwa terdapat perbedaan rata-rata nilai antara siswa perempuan dan laki-laki dalam mata pelajaran membaca dan menulis. **Siswa perempuan** cenderung memiliki rata-rata skor yang **lebih tinggi** dalam kedua mata pelajaran ini dibandingkan **siswa laki-laki** dan penulis ketahui bahwa **siswa perempuan** menunjukkan keunggulan yang lebih jelas dalam kemampuan verbal **membaca dan menulis**, sementara performa dalam **matematika** hampir setara dengan **siswa laki-laki.**
 
 
 **Visualisasi korelasi nilai siswa yang lulus dan gagal pada setiap akademik<br>**
@@ -176,17 +177,17 @@ Pada gambar 17 merupakan hasil visualisasi korelasi semua *mata pelajaran* pada 
 ![alt text](./asset/writing.png)<br>
 ![alt text](./asset/reading.png)<br>
 Gambar 18. Korelasi nilai siswa yang lulus dan gagal.<br>
-Berdasarkan gambar diatas merupakan hasil visualisasi untuk dapat melihat nilai siswa yang lulus dan gagal berdasarkan setiap akademik. dimana yang kita lihat bahwa ada perbedaan yang sangat signifikan pada setiap mata pelajaran yang diikuti oleh siswa, sebagai berikut :
-- pada bar char *math score* yang dapat kita ketahui adalah bahwa siswa yang dinyatakan lulus dalam ujian matematika lebih tinggi memiliki persentase 87,6% dibanding yang gagal memiliki persentase 12,4%.
-- pada bar char *writing score* yang dapat kita ketahui ialah bahwa siswa lebih banyak yang lulus pada ujian mata pelajaran menulis yang memiliki persentase 89,7% dibanding dengan siswa yang gagal memiliki persentase 10,3%.
-- pada bar char *reading score* yang kita ketahui adalah lebih banyak siswa yang lulus dalam ujian mata pelajaran membaca yang memiliki persentase 92,1% dibanding dengan siswa yang gagal memiliki persentase 7,9%.
+Berdasarkan gambar diatas merupakan hasil visualisasi untuk dapat melihat nilai siswa yang lulus dan gagal berdasarkan setiap akademik. dimana yang penulis lihat bahwa ada perbedaan yang sangat signifikan pada setiap mata pelajaran yang diikuti oleh siswa, sebagai berikut :
+- pada bar char *math score* yang dapat penulis ketahui adalah bahwa siswa yang dinyatakan lulus dalam ujian matematika lebih tinggi memiliki persentase 87,6% dibanding yang gagal memiliki persentase 12,4%.
+- pada bar char *writing score* yang dapat penulis ketahui ialah bahwa siswa lebih banyak yang lulus pada ujian mata pelajaran menulis yang memiliki persentase 89,7% dibanding dengan siswa yang gagal memiliki persentase 10,3%.
+- pada bar char *reading score* yang penulis ketahui adalah lebih banyak siswa yang lulus dalam ujian mata pelajaran membaca yang memiliki persentase 92,1% dibanding dengan siswa yang gagal memiliki persentase 7,9%.
 - **Kesimpulannya** Mata pelajaran dengan nilai akademik yang paling tinggi yaitu mata pelajaran *reading score* yang mencapai **persentase 92,1%** dan persentase kegagalan lebih rendah dari mata pelajaran lainnya.
 
 **Korelasi matriks fitur numerik.<br>**
 ![alt text](./asset/matrik.png)<br>
 Gambar 19. Korelasi matrik fitur numerik.<br>
 Pada gambar diatas merupakan hasil korelasi matrik pada fitur numerik, yang dimana diketahui bahwa setiap dalam sel adalah nilai koefisien korelasi pearson antara dua fitur. dimana nilai antara 1 dan -1 menunjukkan korelasi yang kuat sedangkan nilai yang mendekati 0 menunjukkan korelasi yang lemah.<br>
-dari hasil visualisasi yang kita ketahui bahwa fitur 'math score' dan 'writing score' keduanya memiliki hubungan yang positif dengan 'reading score'. jadi, fitur 'reading score' berkorelasi tinggi dengan kedua fitur tersebut.
+dari hasil visualisasi yang penulis ketahui bahwa fitur 'math score' dan 'writing score' keduanya memiliki hubungan yang positif dengan 'reading score'. jadi, fitur 'reading score' berkorelasi tinggi dengan kedua fitur tersebut.
 ## Data Preparation
 ### Tahap Preparation
 - membuat kolom baru yaitu **Average Score** untuk dijadikan taget.
@@ -195,7 +196,7 @@ dari hasil visualisasi yang kita ketahui bahwa fitur 'math score' dan 'writing s
 - melakukan fungsi 'Standarisasi' pada data numerik<br>
 
 #### Membuat Kolom Average Score 
-Kita akan melakukan pembuatan kolom baru yaitu *average score* yang bertujuan untuk menjadikan kolom *average score* sebagai taget untuk melatih model dan mendapatkan evaluasi dari model yang telah kita latih. penulis dalam membuat kolom *average score* dengan cara membuat rata-rata pada setiap kolom numerik yaitu *math score, writing score dan reading score* menggunakan fungsi **.mean(axis=1)**. berikut hasilnya :
+Penulis akan melakukan pembuatan kolom baru yaitu *average score* yang bertujuan untuk menjadikan kolom *average score* sebagai taget untuk melatih model dan mendapatkan evaluasi dari model yang telah penulis latih. penulis dalam membuat kolom *average score* dengan cara membuat rata-rata pada setiap kolom numerik yaitu *math score, writing score dan reading score* menggunakan fungsi **.mean(axis=1)**. berikut hasilnya :
 ![alt text](./asset/average.png)<br>
 Gambar 20. Kolom **Average Score**<br>
 
@@ -211,17 +212,17 @@ Gambar 20. Kolom **Average Score**<br>
 | 4     | 0.650912   | 0.596682       | 0.443121       | False         | True        | False              | True                | False                                         | False                                      | False                               | False                                    | True                          | False                           | False                       | True                  | False               | False               | True                | False               | False               |
 <br>
 Tabel 2. One-Hot-Encoding pada data kategori.<br>
-Pada tabel diatas merupakan hasil one hot encoding yang kita lakukan pada data kategori yang menghasilkan False dan True pada semua data bertipe kategori. menggunakan one-hot-encoding dengan teknik .get_dummies()<br>
+Pada tabel diatas merupakan hasil one hot encoding yang penulis lakukan pada data kategori yang menghasilkan False dan True pada semua data bertipe kategori. menggunakan one-hot-encoding dengan teknik .get_dummies()<br>
 
 #### Data Splitting
 
-Pada proyek ini kita akan menggunakan data split untuk membagi fitur target yang akan kita latih selanjutnya. untuk melakukan itu, perlu mengimport library data split yaitu *train_test_split*, kemudian membagi variabel menjadi 2 buah yaitu X yang berfungsi untuk menghapus kolom *average score* dan y untuk menampilkan kolom *average score* lalu dibagi menjadi 4 variabel baru yaitu *X_train, X_test,y_train,y_test menggunakan library *train_test_split* dengan parameter seperti ini :
+Pada proyek ini penulis akan menggunakan data split untuk membagi fitur target yang akan penulis latih selanjutnya. untuk melakukan itu, perlu mengimport library data split yaitu *train_test_split*, kemudian membagi variabel menjadi 2 buah yaitu X yang berfungsi untuk menghapus kolom *average score* dan y untuk menampilkan kolom *average score* lalu dibagi menjadi 4 variabel baru yaitu *X_train, X_test,y_train,y_test menggunakan library *train_test_split* dengan parameter seperti ini :
 - X berfungsi untuk menghapus kolom *average score*
 - y berfungsi untuk menampilkan target yaitu kolom *average score*
-- test_size adalah ukuran pembagian dataset yang akan kita lakukan, dengan ketentuan 80% untuk data training dan 20% data testing.
+- test_size adalah ukuran pembagian dataset yang akan penulis lakukan, dengan ketentuan 80% untuk data training dan 20% data testing.
 - random_state digunakan untuk mengontrol random numer generator yang akan digunakan, maka penulis menggunakan **random_state=42**.
 
-setelah melakukan pembagian data pada data splitting, kita bisa mengetahui berapa banyak jumlah sampel pada setiap data yang telah kita bagikan sebelumnya, untuk menampilkan jumlah sampel pada setiap data yang dibagi ialah menggunakan fungsi *len(X_train) dan len(X_test)*. maka berikut hasil split dataset.
+setelah melakukan pembagian data pada data splitting, penulis bisa mengetahui berapa banyak jumlah sampel pada setiap data yang telah penulis bagikan sebelumnya, untuk menampilkan jumlah sampel pada setiap data yang dibagi ialah menggunakan fungsi *len(X_train) dan len(X_test)*. maka berikut hasil split dataset.
 
 ![alt text](./asset/sampel.png)<br>
 Gambar 21. hasil jumlah sample<br>
@@ -259,7 +260,7 @@ Random Forest adalah algoritma ensemble learning.ide dibalik model ensemble adal
 - membuat keputusan dari subset acak data
 - menggabungkan prediksi dari semua pohon<br>
 pada kasus proyek ini bertipe regresi maka digunakan random forest Regressor dari library Scikit-learn dengan beberapa parameter yang digunakan:
-- n_estimator : jumlah trees (pohon) di forest. disini kita menerapkan **n_estimator=50**.
+- n_estimator : jumlah trees (pohon) di forest. disini penulis menerapkan **n_estimator=50**.
 - max_depth ialah kedalaman atau panjang pohon.bertujuan untuk membagi setiap node ke dalam jumlah pengamatan yang dihasilkan. penulis menerapkan **max_deptg=16**.
 - random_state digunakan untuk mengontrol random number generator yang digunakan, penulis menerapkan **random_state=55**
 - n_jobs ialah jumlah job yang digunakan secara paralel.penulis menerapkan **n_jobs=-1** artinya semua proses berjalan secara paralel.<br>
@@ -307,12 +308,12 @@ y_pred = nilai yang diprediksi.<br>
   |
 <br>
 Tabel 3. Hasil MSE.<br>
-Pada tabel diatas merupakan hasil MSE yang telah kita lakukan pada data train dan data test. untuk lebih memudahkan penulis menampilkan plot matrik dengan bar chart.
+Pada tabel diatas merupakan hasil MSE yang telah penulis lakukan pada data train dan data test. untuk lebih memudahkan penulis menampilkan plot matrik dengan bar chart.
 
 ![alt text](./asset/model.png)<br>
 
 Gambar 23. Visualisasi hasil MSE dari ke 4 algoritma<br>
-Dari gambar diatas, terlihat bahwa model Random forest pada data train dan test memiliki nilai error yang sangat kecil. dibanding dengan model KNN dan SVM memiliki nilai error pada data train dan data test yang lumayan tinggi dan untuk model boosting memiliki nilai eror yang tinggi pada data train dan data test memiliki nilai eror yang lebih sedikit dibanding dengan data train. sehingga model Random Forest yang akan kita pilih sebagai model terbaik untuk melakukan prediksi hasil setiap nilai akademik skor ujian pada siswa.
+Dari gambar diatas, terlihat bahwa model Random forest pada data train dan test memiliki nilai error yang sangat kecil. dibanding dengan model KNN dan SVM memiliki nilai error pada data train dan data test yang lumayan tinggi dan untuk model boosting memiliki nilai eror yang tinggi pada data train dan data test memiliki nilai eror yang lebih sedikit dibanding dengan data train. sehingga model Random Forest yang akan penulis pilih sebagai model terbaik untuk melakukan prediksi hasil setiap nilai akademik skor ujian pada siswa.
 
 untuk mengujinya, penulis membuat prediksi menggunakan beberapa hasil dari data test.
 
